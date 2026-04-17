@@ -1,4 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
+using VacinaCovid.Entidade.EntidadesDTO;
+using VacinaCovid.Negocios.Interface.INegocios;
 
 namespace VacinaCovid.Controllers
 {
@@ -6,19 +8,33 @@ namespace VacinaCovid.Controllers
     [Route("[controller]")]
     public class VacinasController : ControllerBase
     {
-        public static readonly List<string> vacinas = new () { "CoronaVac", "AstraZeneca", "Pfizer", "Janssen" };
-
         private readonly ILogger<VacinasController> _logger;
+        private readonly IPacienteNegocio _pacienteNegocio; 
 
-        public VacinasController(ILogger<VacinasController> logger)
+        public VacinasController(ILogger<VacinasController> logger, IPacienteNegocio pacienteNegocio)
         {
             _logger = logger;
+            _pacienteNegocio = pacienteNegocio;
+
         }
 
-        [HttpGet]
-        public ActionResult<List<string>> Get()
+        [HttpGet("Listar Pacientes")]
+        public ActionResult<List<PacienteDTO>> Get()
         {
-            return vacinas;
+            return _pacienteNegocio.ListarPacientes();
+        }
+
+        [HttpDelete("Remover Paciente")]
+        public ActionResult Delete(int id) {
+            _pacienteNegocio.RemoverPaciente(id);
+            return NoContent();
+        }
+        [HttpPost("Inserir Paciente")]
+       public ActionResult<PacienteDTO> Post(string nome, DateTime dataNascimento)
+        {
+                
+            var pacienteInserido = _pacienteNegocio.InserirPaciente(nome,dataNascimento);
+            return NoContent();
         }
     }
 }

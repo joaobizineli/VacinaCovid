@@ -1,15 +1,21 @@
+using VacinaCovid.Negocios.Interface.INegocios;
+using VacinaCovid.Negocios.Negocios;
+using VacinaCovid.Repositorio.Interface.IRepositorios;
+using VacinaCovid.Repositorio.Repositorio;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddScoped<IPacienteNegocio, PacienteNegocio>();
+builder.Services.AddScoped<IPacienteRepositorio, PacienteRepositorio>();
+
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
