@@ -13,7 +13,7 @@ namespace VacinaCovid.Repositorio.Interface.IRepositorios
         void Adicionar(Paciente paciente);
         List<Paciente> Listar();
         Paciente ObterId(int id);
-        void Atualizar(string paciente, string pacienteAtualizado);
+        void Atualizar(int id, string nomeAtualizado, DateTime dataNascimento);
         void Remover(int id);
     }
 }

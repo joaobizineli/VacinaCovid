@@ -9,6 +9,7 @@
   <ItemGroup>
     <ProjectReference Include="..\VacinaCovid.Negocios.Interface\VacinaCovid.Negocios.Interface.csproj" />
     <ProjectReference Include="..\VacinaCovid.Repositorio.Interface\VacinaCovid.Repositorio.Interface.csproj" />
+    <ProjectReference Include="..\VacinaCovid.Utilitarios\VacinaCovid.Utilitarios.csproj" />
   </ItemGroup>
 
 </Project>

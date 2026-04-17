@@ -9,7 +9,7 @@ namespace VacinaCovid.Controllers
     public class VacinasController : ControllerBase
     {
         private readonly ILogger<VacinasController> _logger;
-        private readonly IPacienteNegocio _pacienteNegocio; 
+        private readonly IPacienteNegocio _pacienteNegocio;
 
         public VacinasController(ILogger<VacinasController> logger, IPacienteNegocio pacienteNegocio)
         {
@@ -18,23 +18,37 @@ namespace VacinaCovid.Controllers
 
         }
 
-        [HttpGet("Listar Pacientes")]
+        [HttpGet("ListarPacientes")]
         public ActionResult<List<PacienteDTO>> Get()
         {
             return _pacienteNegocio.ListarPacientes();
         }
 
-        [HttpDelete("Remover Paciente")]
-        public ActionResult Delete(int id) {
+        [HttpGet("BuscarPacienteId")]
+        public ActionResult<PacienteDTO> Get(int id)
+        {
+            return _pacienteNegocio.ObterPaciente(id);
+        }
+
+        [HttpDelete("RemoverPaciente")]
+        public ActionResult Delete(int id)
+        {
             _pacienteNegocio.RemoverPaciente(id);
             return NoContent();
         }
-        [HttpPost("Inserir Paciente")]
-       public ActionResult<PacienteDTO> Post(string nome, DateTime dataNascimento)
+        [HttpPost("InserirPaciente")]
+        public ActionResult<List<PacienteDTO>> Post(string nome, DateTime dataNascimento)
         {
-                
-            var pacienteInserido = _pacienteNegocio.InserirPaciente(nome,dataNascimento);
-            return NoContent();
+
+            var pacienteInserido = _pacienteNegocio.InserirPaciente(nome, dataNascimento);
+            return _pacienteNegocio.ListarPacientes();
+        }
+
+        [HttpPut("AlterarPaciente")]
+        public ActionResult<List<PacienteDTO>> Put(int id, string nome, DateTime dataNascimento)
+        {
+            _pacienteNegocio.AtualizarPaciente(id, nome, dataNascimento);
+            return _pacienteNegocio.ListarPacientes();
         }
     }
 }

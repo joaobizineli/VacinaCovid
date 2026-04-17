@@ -27,10 +27,15 @@ namespace VacinaCovid.Repositorio.Repositorio
         }
 
 
-        public void Atualizar(string paciente, string pacienteAtualizado)
+        public void Atualizar(int id, string nomeAtualizado, DateTime dataNascimento)
         {
-            var idx = Pacientes.FindIndex(p => p.Nome.Equals(paciente, StringComparison.OrdinalIgnoreCase));
-            Pacientes[idx].Nome = pacienteAtualizado;
+            var idx = Pacientes.FindIndex(p => p.IdPaciente == id);
+
+            if (idx < 0)
+                return;
+
+            Pacientes[idx].Nome = nomeAtualizado;
+            Pacientes[idx].DataNascimento = dataNascimento;
             Listar();
         }
 

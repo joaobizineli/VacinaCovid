@@ -4,5 +4,6 @@
   <Project Path="VacinaCovid.Negocios/VacinaCovid.Negocios.csproj" />
   <Project Path="VacinaCovid.Repositorio.Interface/VacinaCovid.Repositorio.Interface.csproj" />
   <Project Path="VacinaCovid.Repositorio/VacinaCovid.Repositorio.csproj" />
+  <Project Path="VacinaCovid.Utilitarios/VacinaCovid.Utilitarios.csproj" />
   <Project Path="VacinaCovid/VacinaCovid.csproj" />
 </Solution>

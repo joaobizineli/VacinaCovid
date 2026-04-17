@@ -1,31 +1,31 @@
-using VacinaCovid.Negocios.Interface.INegocios;
-using VacinaCovid.Negocios.Negocios;
-using VacinaCovid.Repositorio.Interface.IRepositorios;
-using VacinaCovid.Repositorio.Repositorio;
+using log4net.Config;
+using log4net;
+using System.Reflection;
+using Microsoft.AspNetCore;
 
-var builder = WebApplication.CreateBuilder(args);
-
-
-
-builder.Services.AddControllers();
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-
-builder.Services.AddScoped<IPacienteNegocio, PacienteNegocio>();
-builder.Services.AddScoped<IPacienteRepositorio, PacienteRepositorio>();
-
-var app = builder.Build();
-
-if (app.Environment.IsDevelopment())
+namespace ControleTarefas.WebApi
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    public static class Program
+    {
+        private static readonly ILog _log = LogManager.GetLogger(typeof(Program));
+
+        public static void Main(string[] args)
+        {
+            try
+            {
+                var logRepository = LogManager.GetRepository(Assembly.GetCallingAssembly());
+                XmlConfigurator.Configure(logRepository, new FileInfo("log4net.config"));
+
+                _log.Info("Iniciando a API");
+                var webHost = WebHost.CreateDefaultBuilder(args).UseStartup<Startup>();
+
+                webHost.Build().Run();
+            }
+            catch (Exception ex)
+            {
+                _log.Fatal("Erro fatal", ex);
+                throw;
+            }
+        }
+    }
 }
-
-app.UseHttpsRedirection();
-
-app.UseAuthorization();
-
-app.MapControllers();
-
-app.Run();
