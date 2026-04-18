@@ -6,47 +6,50 @@ namespace VacinaCovid.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class VacinasController : ControllerBase
+    public class PacientesController : ControllerBase
     {
-        private readonly ILogger<VacinasController> _logger;
+
+        private readonly ILogger<PacientesController> _logger;
         private readonly IPacienteNegocio _pacienteNegocio;
 
-        public VacinasController(ILogger<VacinasController> logger, IPacienteNegocio pacienteNegocio)
+        public PacientesController(ILogger<PacientesController> logger, IPacienteNegocio pacienteNegocio)
         {
             _logger = logger;
             _pacienteNegocio = pacienteNegocio;
 
         }
-
         [HttpGet("ListarPacientes")]
-        public ActionResult<List<PacienteDTO>> Get()
+        public ActionResult<List<PacienteDTO>> ListarPacientes()
         {
+            _logger.LogInformation("Listando pacientes");
             return _pacienteNegocio.ListarPacientes();
         }
 
         [HttpGet("BuscarPacienteId")]
-        public ActionResult<PacienteDTO> Get(int id)
+        public ActionResult<PacienteDTO> BuscarPacienteId(int id)
         {
+            _logger.LogInformation($"Buscando paciente com ID: {id}");
             return _pacienteNegocio.ObterPaciente(id);
         }
-
         [HttpDelete("RemoverPaciente")]
-        public ActionResult Delete(int id)
+        public ActionResult<List<PacienteDTO>> RemoverPaciente(int id)
         {
+            _logger.LogInformation($"Removendo paciente com ID: {id}");
             _pacienteNegocio.RemoverPaciente(id);
-            return NoContent();
+            return _pacienteNegocio.ListarPacientes();
         }
         [HttpPost("InserirPaciente")]
-        public ActionResult<List<PacienteDTO>> Post(string nome, DateTime dataNascimento)
+        public ActionResult<List<PacienteDTO>> InserirPaciente(string nome, DateTime dataNascimento)
         {
-
+            _logger.LogInformation($"Inserindo paciente: {nome}, Data de Nascimento: {dataNascimento}");
             var pacienteInserido = _pacienteNegocio.InserirPaciente(nome, dataNascimento);
             return _pacienteNegocio.ListarPacientes();
         }
 
         [HttpPut("AlterarPaciente")]
-        public ActionResult<List<PacienteDTO>> Put(int id, string nome, DateTime dataNascimento)
+        public ActionResult<List<PacienteDTO>> AlterarPaciente(int id, string nome, DateTime dataNascimento)
         {
+            _logger.LogInformation($"Alterando paciente com ID: {id}, Nome: {nome}, Data de Nascimento: {dataNascimento}");
             _pacienteNegocio.AtualizarPaciente(id, nome, dataNascimento);
             return _pacienteNegocio.ListarPacientes();
         }

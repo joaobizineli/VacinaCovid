@@ -2,10 +2,7 @@
 using VacinaCovid.Middleware;
 using Microsoft.OpenApi.Any;
 using Microsoft.OpenApi.Models;
-using VacinaCovid.Negocios.Interface.INegocios;
-using VacinaCovid.Negocios.Negocios;
-using VacinaCovid.Repositorio.Interface.IRepositorios;
-using VacinaCovid.Repositorio.Repositorio;
+using VacinaCovid.Configuration;
 
 namespace ControleTarefas.WebApi
 {
@@ -21,9 +18,9 @@ namespace ControleTarefas.WebApi
         {
             services.AddControllers();
 
-            services.AddScoped<IPacienteNegocio, PacienteNegocio>();
-            services.AddScoped<IPacienteRepositorio, PacienteRepositorio>();
-            services.AddScoped<ApiMiddleware>();    
+            services.AddDependencyInjection();
+            services.AddScoped<ApiMiddleware>();
+    
 
 
             services.AddSwaggerGen(c =>
