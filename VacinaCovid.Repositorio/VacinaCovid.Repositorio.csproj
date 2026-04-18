@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\VacinaCovid.Entidade\VacinaCovid.Entidade.csproj" />
     <ProjectReference Include="..\VacinaCovid.Repositorio.Interface\VacinaCovid.Repositorio.Interface.csproj" />
   </ItemGroup>
 
