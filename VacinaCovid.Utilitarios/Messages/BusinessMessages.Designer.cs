@@ -61,6 +61,51 @@ namespace VacinaCovid.Utilitarios.Messages {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Apenas agendamentos com status &apos;Agendado&apos; podem ser marcados como realizados..
+        /// </summary>
+        public static string AgendamentoNaoAgendado {
+            get {
+                return ResourceManager.GetString("AgendamentoNaoAgendado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Agendamento &quot;{0}&quot; não encontrado..
+        /// </summary>
+        public static string AgendamentoNaoEncontrado {
+            get {
+                return ResourceManager.GetString("AgendamentoNaoEncontrado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Não é possível cancelar agendamentos já realizados..
+        /// </summary>
+        public static string AgendamentoRealizadoCancel {
+            get {
+                return ResourceManager.GetString("AgendamentoRealizadoCancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Não é possível deletar agendamentos já realizados..
+        /// </summary>
+        public static string AgendamentoRealizadoDelete {
+            get {
+                return ResourceManager.GetString("AgendamentoRealizadoDelete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Não é possível agendar para datas passadas..
+        /// </summary>
+        public static string DataPassada {
+            get {
+                return ResourceManager.GetString("DataPassada", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Data de Vacinação é obrigatória..
         /// </summary>
         public static string DataVacinacaoObrigatoria {
@@ -102,6 +147,33 @@ namespace VacinaCovid.Utilitarios.Messages {
         public static string IdVacinaObrigatoria {
             get {
                 return ResourceManager.GetString("IdVacinaObrigatoria", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Deve haver intervalo de 1 hora entre agendamentos..
+        /// </summary>
+        public static string IntervaloConflitante {
+            get {
+                return ResourceManager.GetString("IntervaloConflitante", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Limite de 20 agendamentos por dia já atingido..
+        /// </summary>
+        public static string LimiteDiarioUltrapassado {
+            get {
+                return ResourceManager.GetString("LimiteDiarioUltrapassado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Máximo de 2 agendamentos para este horário já atingido..
+        /// </summary>
+        public static string LimiteHorarioUltrapassado {
+            get {
+                return ResourceManager.GetString("LimiteHorarioUltrapassado", resourceCulture);
             }
         }
         

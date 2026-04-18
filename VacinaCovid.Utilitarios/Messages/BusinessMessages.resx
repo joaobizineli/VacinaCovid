@@ -147,4 +147,28 @@
   <data name="LocalVacinacaoMaximo" xml:space="preserve">
     <value>Local de Vacinação deve ter no máximo 100 caracteres.</value>
   </data>
+  <data name="DataPassada" xml:space="preserve">
+    <value>Não é possível agendar para datas passadas.</value>
+  </data>
+  <data name="LimiteDiarioUltrapassado" xml:space="preserve">
+    <value>Limite de 20 agendamentos por dia já atingido.</value>
+  </data>
+  <data name="LimiteHorarioUltrapassado" xml:space="preserve">
+    <value>Máximo de 2 agendamentos para este horário já atingido.</value>
+  </data>
+  <data name="IntervaloConflitante" xml:space="preserve">
+    <value>Deve haver intervalo de 1 hora entre agendamentos.</value>
+  </data>
+  <data name="AgendamentoNaoAgendado" xml:space="preserve">
+    <value>Apenas agendamentos com status 'Agendado' podem ser marcados como realizados.</value>
+  </data>
+  <data name="AgendamentoNaoEncontrado" xml:space="preserve">
+    <value>Agendamento "{0}" não encontrado.</value>
+  </data>
+  <data name="AgendamentoRealizadoCancel" xml:space="preserve">
+    <value>Não é possível cancelar agendamentos já realizados.</value>
+  </data>
+  <data name="AgendamentoRealizadoDelete" xml:space="preserve">
+    <value>Não é possível deletar agendamentos já realizados.</value>
+  </data>
 </root>

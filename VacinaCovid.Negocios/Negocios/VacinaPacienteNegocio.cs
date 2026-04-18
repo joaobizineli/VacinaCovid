@@ -5,6 +5,7 @@ using VacinaCovid.Entidade.Enum;
 using VacinaCovid.Negocios.Interface.INegocios;
 using VacinaCovid.Repositorio.Interface.IRepositorios;
 using VacinaCovid.Utilitarios.Exceptions;
+using VacinaCovid.Utilitarios.Messages;
 
 namespace VacinaCovid.Negocios.Negocios
 {
@@ -30,18 +31,18 @@ namespace VacinaCovid.Negocios.Negocios
         {
             var paciente = _pacienteRepositorio.ObterId(idPaciente);
             if (paciente == null)
-                throw new BusinessException($"Paciente {idPaciente} não encontrado.");
+                throw new BusinessException(string.Format(BusinessMessages.PacienteNaoEncontrado));
 
             if (data.Date < DateTime.Today)
-                throw new BusinessException("Não é possível agendar para datas passadas.");
+                throw new BusinessException(string.Format(BusinessMessages.DataPassada));
 
             var contagemDia = _vacinaPacienteRepositorio.ContagemPorData(data);
             if (contagemDia >= 20)
-                throw new BusinessException("Limite de 20 agendamentos por dia já atingido.");
+                throw new BusinessException(string.Format(BusinessMessages.LimiteDiarioUltrapassado));
 
             var contagemHora = _vacinaPacienteRepositorio.ContagemPorDataEHora(data, hora);
             if (contagemHora >= 2)
-                throw new BusinessException("Máximo de 2 agendamentos para este horário já atingido.");
+                throw new BusinessException(string.Format(BusinessMessages.LimiteHorarioUltrapassado));
 
             var todosAgendamentosNoDia = _vacinaPacienteRepositorio.ListarPorData(data);
 
@@ -50,7 +51,7 @@ namespace VacinaCovid.Negocios.Negocios
                 Math.Abs((a.HoraVacinacao - hora).TotalHours) < 1);
 
             if (conflito)
-                throw new BusinessException("Deve haver intervalo de 1 hora entre agendamentos.");
+                throw new BusinessException(string.Format(BusinessMessages.IntervaloConflitante));
 
             var novoAgendamento = new VacinaPaciente
             {
@@ -81,7 +82,7 @@ namespace VacinaCovid.Negocios.Negocios
         {
             var paciente = _pacienteRepositorio.ObterId(idPaciente);
             if (paciente == null)
-                throw new BusinessException($"Paciente {idPaciente} não encontrado.");
+                throw new BusinessException(string.Format(BusinessMessages.PacienteNaoEncontrado));
 
             return _vacinaPacienteRepositorio.ListarPorPaciente(idPaciente)
                 .Select(v => ConverterParaDTO(v))
@@ -99,7 +100,7 @@ namespace VacinaCovid.Negocios.Negocios
         {
             var agendamento = _vacinaPacienteRepositorio.ObterId(id);
             if (agendamento == null)
-                throw new BusinessException($"Agendamento {id} não encontrado.");
+                throw new BusinessException(string.Format(BusinessMessages.PacienteNaoEncontrado));
 
             return ConverterParaDTO(agendamento);
         }
@@ -108,10 +109,10 @@ namespace VacinaCovid.Negocios.Negocios
         {
             var agendamento = _vacinaPacienteRepositorio.ObterId(id);
             if (agendamento == null)
-                throw new BusinessException($"Agendamento {id} não encontrado.");
+                throw new BusinessException(string.Format(BusinessMessages.PacienteNaoEncontrado));
 
             if (agendamento.Status != StatusEnum.Agendado)
-                throw new BusinessException("Apenas agendamentos com status 'Agendado' podem ser marcados como realizados.");
+                throw new BusinessException(string.Format(BusinessMessages.AgendamentoNaoAgendado));
 
             agendamento.Status = StatusEnum.Realizado;
             agendamento.Observacoes = observacoes;
@@ -123,10 +124,10 @@ namespace VacinaCovid.Negocios.Negocios
         {
             var agendamento = _vacinaPacienteRepositorio.ObterId(id);
             if (agendamento == null)
-                throw new BusinessException($"Agendamento {id} não encontrado.");
+                throw new BusinessException(string.Format(BusinessMessages.AgendamentoNaoEncontrado,id));
 
             if (agendamento.Status == StatusEnum.Realizado)
-                throw new BusinessException("Não é possível cancelar agendamentos já realizados.");
+                throw new BusinessException(string.Format(BusinessMessages.AgendamentoRealizadoCancel));
 
             agendamento.Status = StatusEnum.Cancelado;
             _vacinaPacienteRepositorio.Atualizar(id, agendamento);
@@ -136,10 +137,10 @@ namespace VacinaCovid.Negocios.Negocios
         {
             var agendamento = _vacinaPacienteRepositorio.ObterId(id);
             if (agendamento == null)
-                throw new BusinessException($"Agendamento {id} não encontrado.");
+                throw new BusinessException(string.Format(BusinessMessages.PacienteNaoEncontrado));
 
             if (agendamento.Status == StatusEnum.Realizado)
-                throw new BusinessException("Não é possível remover agendamentos já realizados.");
+                throw new BusinessException(string.Format(BusinessMessages.AgendamentoRealizadoDelete));
 
             _vacinaPacienteRepositorio.Remover(id);
         }
