@@ -126,4 +126,25 @@
   <data name="PacienteNaoEncontrado" xml:space="preserve">
     <value>"{0}" não encontrado.</value>
   </data>
+  <data name="IdPacienteObrigatorio" xml:space="preserve">
+    <value>Id do Paciente é obrigatório e deve ser maior que 0.</value>
+  </data>
+  <data name="IdVacinaObrigatoria" xml:space="preserve">
+    <value>Id da Vacina é obrigatória e deve ser maior que 0.</value>
+  </data>
+  <data name="DataVacinacaoObrigatoria" xml:space="preserve">
+    <value>Data de Vacinação é obrigatória.</value>
+  </data>
+  <data name="HoraVacinacaoObrigatoria" xml:space="preserve">
+    <value>Hora da Vacinação é obrigatória.</value>
+  </data>
+  <data name="LocalVacinacaoObrigatorio" xml:space="preserve">
+    <value>Local de Vacinação é obrigatório.</value>
+  </data>
+  <data name="LocalVacinacaoMinimo" xml:space="preserve">
+    <value>Local de Vacinação deve ter no mínimo 3 caracteres.</value>
+  </data>
+  <data name="LocalVacinacaoMaximo" xml:space="preserve">
+    <value>Local de Vacinação deve ter no máximo 100 caracteres.</value>
+  </data>
 </root>

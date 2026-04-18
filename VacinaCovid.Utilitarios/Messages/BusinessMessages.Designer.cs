@@ -61,11 +61,74 @@ namespace VacinaCovid.Utilitarios.Messages {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Data de Vacinação é obrigatória..
+        /// </summary>
+        public static string DataVacinacaoObrigatoria {
+            get {
+                return ResourceManager.GetString("DataVacinacaoObrigatoria", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Hora da Vacinação é obrigatória..
+        /// </summary>
+        public static string HoraVacinacaoObrigatoria {
+            get {
+                return ResourceManager.GetString("HoraVacinacaoObrigatoria", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a O ID do paciente deve ser um número positivo..
         /// </summary>
         public static string IdNegativo {
             get {
                 return ResourceManager.GetString("IdNegativo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Id do Paciente é obrigatório e deve ser maior que 0..
+        /// </summary>
+        public static string IdPacienteObrigatorio {
+            get {
+                return ResourceManager.GetString("IdPacienteObrigatorio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Id da Vacina é obrigatória e deve ser maior que 0..
+        /// </summary>
+        public static string IdVacinaObrigatoria {
+            get {
+                return ResourceManager.GetString("IdVacinaObrigatoria", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Local de Vacinação deve ter no máximo 100 caracteres..
+        /// </summary>
+        public static string LocalVacinacaoMaximo {
+            get {
+                return ResourceManager.GetString("LocalVacinacaoMaximo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Local de Vacinação deve ter no mínimo 3 caracteres..
+        /// </summary>
+        public static string LocalVacinacaoMinimo {
+            get {
+                return ResourceManager.GetString("LocalVacinacaoMinimo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Local de Vacinação é obrigatório..
+        /// </summary>
+        public static string LocalVacinacaoObrigatorio {
+            get {
+                return ResourceManager.GetString("LocalVacinacaoObrigatorio", resourceCulture);
             }
         }
         

@@ -18,6 +18,7 @@
     <ProjectReference Include="..\VacinaCovid.Repositorio.Interface\VacinaCovid.Repositorio.Interface.csproj" />
     <ProjectReference Include="..\VacinaCovid.Repositorio\VacinaCovid.Repositorio.csproj" />
     <ProjectReference Include="..\VacinaCovid.Utilitarios\VacinaCovid.Utilitarios.csproj" />
+    <ProjectReference Include="..\VacinaCovid.Validador\VacinaCovid.Validador.csproj" />
   </ItemGroup>
 
 </Project>

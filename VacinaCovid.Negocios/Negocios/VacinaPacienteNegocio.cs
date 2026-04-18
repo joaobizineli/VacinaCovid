@@ -35,9 +35,6 @@ namespace VacinaCovid.Negocios.Negocios
             if (data.Date < DateTime.Today)
                 throw new BusinessException("Não é possível agendar para datas passadas.");
 
-            if (hora < new TimeSpan(8, 0, 0) || hora > new TimeSpan(17, 0, 0))
-                throw new BusinessException("Horário deve estar entre 08:00 e 17:00.");
-
             var contagemDia = _vacinaPacienteRepositorio.ContagemPorData(data);
             if (contagemDia >= 20)
                 throw new BusinessException("Limite de 20 agendamentos por dia já atingido.");
@@ -50,7 +47,7 @@ namespace VacinaCovid.Negocios.Negocios
 
             var conflito = todosAgendamentosNoDia.Any(a =>
                 a.Status == StatusEnum.Agendado &&
-                Math.Abs((a.HoraVacinacao - hora).TotalHours) < 1);  // ← Qualquer um
+                Math.Abs((a.HoraVacinacao - hora).TotalHours) < 1);
 
             if (conflito)
                 throw new BusinessException("Deve haver intervalo de 1 hora entre agendamentos.");

@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using System.Diagnostics;
 using System.Net;
 using System.Text.Json.Serialization;
+using VacinaCovid.Utilitarios.Excepetions;
 using VacinaCovid.Utilitarios.Exceptions;
 using VacinaCovid.Utilitarios.Messages;
 using VacinaCovid.Utilitarios.Response;
@@ -52,6 +53,9 @@ namespace VacinaCovid.Middleware
                     messages.Add(ex.Message);
                     break;
 
+                case BusinessListException: 
+                    messages = ((BusinessListException)ex).Messages;
+                    break;
                 default:
                     messages.Add(InfraMessages.ErroInesperado);
                     break;

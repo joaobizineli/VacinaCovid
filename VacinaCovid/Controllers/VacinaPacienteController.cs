@@ -1,6 +1,9 @@
-﻿using VacinaCovid.Entidade.EntidadesDTO;
+﻿using Microsoft.AspNetCore.Mvc;
+using System.Reflection;
+using VacinaCovid.Entidade.EntidadesDTO;
+using VacinaCovid.Entidade.Model;
 using VacinaCovid.Negocios.Interface.INegocios;
-using Microsoft.AspNetCore.Mvc;
+using VacinaCovid.Validador.Manual;
 
 namespace VacinaCovid.Controllers
 {
@@ -21,15 +24,18 @@ namespace VacinaCovid.Controllers
 
         [HttpPost("AgendarVacina")]
         public ActionResult<List<VacinaPacienteDTO>> AgendarVacina(
-            int idPaciente,
-            int idVacina,
-            DateTime data,
-            TimeSpan hora,
-            string local)
+            [FromBody] VacinaPacienteModel model)
         {
-            _logger.LogInformation($"Agendando vacina para paciente ID: {idPaciente}, Vacina ID: {idVacina}, Data: {data}, Hora: {hora}, Local: {local}");
-            return _vacinaPacienteNegocio.AgendarVacina(idPaciente, idVacina, data, hora, local);
+            _logger.LogInformation($"Agendando vacina para paciente ID: {model.IdPaciente}, Vacina ID: {model.IdVacina}, Data: {model.DataVacinacao}, Hora: {model.HoraVacinacao}, Local: {model.LocalVacinacao}");
+            VacinaCovidValidador.Validar(model);
+            return _vacinaPacienteNegocio.AgendarVacina(
+                model.IdPaciente,
+                model.IdVacina,
+                model.DataVacinacao,
+                model.HoraVacinacao,
+                model.LocalVacinacao);
         }
+        
 
         [HttpGet("ListarAgendamentos")]
         public ActionResult<List<VacinaPacienteDTO>> ListarAgendamentos()

@@ -19,6 +19,8 @@ namespace ControleTarefas.WebApi
             services.AddControllers();
 
             services.AddDependencyInjection();
+            services.AddFluentConfiguration();
+
             services.AddScoped<ApiMiddleware>();
     
 
