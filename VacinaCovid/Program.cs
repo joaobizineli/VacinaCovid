@@ -3,7 +3,7 @@ using log4net;
 using System.Reflection;
 using Microsoft.AspNetCore;
 
-namespace ControleTarefas.WebApi
+namespace VacinaCovid.WebApi
 {
     public static class Program
     {

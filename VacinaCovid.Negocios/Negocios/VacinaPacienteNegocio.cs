@@ -1,5 +1,4 @@
-﻿
-using VacinaCovid.Entidade.Entidades;
+﻿using VacinaCovid.Entidade.Entidades;
 using VacinaCovid.Entidade.EntidadesDTO;
 using VacinaCovid.Entidade.Enum;
 using VacinaCovid.Negocios.Interface.INegocios;
@@ -22,36 +21,30 @@ namespace VacinaCovid.Negocios.Negocios
             _pacienteRepositorio = pacienteRepositorio;
         }
 
-        public List<VacinaPacienteDTO> AgendarVacina(
-            int idPaciente,
-            int idVacina,
-            DateTime data,
-            TimeSpan hora,
-            string local)
+        public async Task<List<VacinaPacienteDTO>> AgendarVacina(
+            int idPaciente, int idVacina, DateTime data, TimeSpan hora, string local)
         {
-            var paciente = _pacienteRepositorio.ObterId(idPaciente);
+            var paciente = await _pacienteRepositorio.ObterPorId(idPaciente);
             if (paciente == null)
-                throw new BusinessException(string.Format(BusinessMessages.PacienteNaoEncontrado));
+                throw new BusinessException(BusinessMessages.PacienteNaoEncontrado);
 
             if (data.Date < DateTime.Today)
-                throw new BusinessException(string.Format(BusinessMessages.DataPassada));
+                throw new BusinessException(BusinessMessages.DataPassada);
 
-            var contagemDia = _vacinaPacienteRepositorio.ContagemPorData(data);
+            var contagemDia = await _vacinaPacienteRepositorio.ContagemPorData(data);
             if (contagemDia >= 20)
-                throw new BusinessException(string.Format(BusinessMessages.LimiteDiarioUltrapassado));
+                throw new BusinessException(BusinessMessages.LimiteDiarioUltrapassado);
 
-            var contagemHora = _vacinaPacienteRepositorio.ContagemPorDataEHora(data, hora);
+            var contagemHora = await _vacinaPacienteRepositorio.ContagemPorDataEHora(data, hora);
             if (contagemHora >= 2)
-                throw new BusinessException(string.Format(BusinessMessages.LimiteHorarioUltrapassado));
+                throw new BusinessException(BusinessMessages.LimiteHorarioUltrapassado);
 
-            var todosAgendamentosNoDia = _vacinaPacienteRepositorio.ListarPorData(data);
-
-            var conflito = todosAgendamentosNoDia.Any(a =>
-                a.Status == StatusEnum.Agendado &&
+            var agendamentosDoDia = await _vacinaPacienteRepositorio.ListarPorData(data);
+            var conflito = agendamentosDoDia.Any(a =>
                 Math.Abs((a.HoraVacinacao - hora).TotalHours) < 1);
 
             if (conflito)
-                throw new BusinessException(string.Format(BusinessMessages.IntervaloConflitante));
+                throw new BusinessException(BusinessMessages.IntervaloConflitante);
 
             var novoAgendamento = new VacinaPaciente
             {
@@ -64,101 +57,98 @@ namespace VacinaCovid.Negocios.Negocios
                 DataCriacao = DateTime.Now
             };
 
-            _vacinaPacienteRepositorio.Adicionar(novoAgendamento);
+            await _vacinaPacienteRepositorio.Inserir(novoAgendamento);
 
-            return ListarAgendamentos();
+            return await ListarAgendamentos();
         }
 
-        public List<VacinaPacienteDTO> ListarAgendamentos()
+        public async Task<List<VacinaPacienteDTO>> ListarAgendamentos()
         {
-            return _vacinaPacienteRepositorio.Listar()
+            var lista = await _vacinaPacienteRepositorio.Listar();
+
+            return lista
                 .OrderBy(v => v.DataVacinacao)
                 .ThenBy(v => v.HoraVacinacao)
-                .Select(v => ConverterParaDTO(v))
+                .Select(ConverterParaDTO)
                 .ToList();
         }
 
-        public List<VacinaPacienteDTO> ListarAgendamentosPaciente(int idPaciente)
+        public async Task<List<VacinaPacienteDTO>> ListarAgendamentosPaciente(int idPaciente)
         {
-            var paciente = _pacienteRepositorio.ObterId(idPaciente);
+            var paciente = await _pacienteRepositorio.ObterPorId(idPaciente);
             if (paciente == null)
-                throw new BusinessException(string.Format(BusinessMessages.PacienteNaoEncontrado));
+                throw new BusinessException(BusinessMessages.PacienteNaoEncontrado);
 
-            return _vacinaPacienteRepositorio.ListarPorPaciente(idPaciente)
-                .Select(v => ConverterParaDTO(v))
-                .ToList();
+            var lista = await _vacinaPacienteRepositorio.ListarPorPaciente(idPaciente);
+            return lista.Select(ConverterParaDTO).ToList();
         }
 
-        public List<VacinaPacienteDTO> ListarAgendamentosPorData(DateTime data)
+        public async Task<List<VacinaPacienteDTO>> ListarAgendamentosPorData(DateTime data)
         {
-            return _vacinaPacienteRepositorio.ListarPorData(data)
-                .Select(v => ConverterParaDTO(v))
-                .ToList();
+            var lista = await _vacinaPacienteRepositorio.ListarPorData(data);
+            return lista.Select(ConverterParaDTO).ToList();
         }
 
-        public VacinaPacienteDTO ObterAgendamento(int id)
+        public async Task<VacinaPacienteDTO> ObterAgendamento(int id)
         {
-            var agendamento = _vacinaPacienteRepositorio.ObterId(id);
+            var agendamento = await _vacinaPacienteRepositorio.ObterPorId(id);
             if (agendamento == null)
-                throw new BusinessException(string.Format(BusinessMessages.PacienteNaoEncontrado));
+                throw new BusinessException(BusinessMessages.AgendamentoNaoEncontrado);
 
             return ConverterParaDTO(agendamento);
         }
 
-        public void MarcarComoRealizado(int id, string observacoes = "")
+        public async Task MarcarComoRealizado(int id, string observacoes = "")
         {
-            var agendamento = _vacinaPacienteRepositorio.ObterId(id);
+            var agendamento = await _vacinaPacienteRepositorio.ObterPorId(id);
             if (agendamento == null)
-                throw new BusinessException(string.Format(BusinessMessages.PacienteNaoEncontrado));
+                throw new BusinessException(BusinessMessages.AgendamentoNaoEncontrado);
 
             if (agendamento.Status != StatusEnum.Agendado)
-                throw new BusinessException(string.Format(BusinessMessages.AgendamentoNaoAgendado));
+                throw new BusinessException(BusinessMessages.AgendamentoNaoAgendado);
 
             agendamento.Status = StatusEnum.Realizado;
             agendamento.Observacoes = observacoes;
 
-            _vacinaPacienteRepositorio.Atualizar(id, agendamento);
+            await _vacinaPacienteRepositorio.Atualizar(agendamento);
         }
 
-        public void CancelarAgendamento(int id)
+        public async Task CancelarAgendamento(int id)
         {
-            var agendamento = _vacinaPacienteRepositorio.ObterId(id);
+            var agendamento = await _vacinaPacienteRepositorio.ObterPorId(id);
             if (agendamento == null)
-                throw new BusinessException(string.Format(BusinessMessages.AgendamentoNaoEncontrado,id));
+                throw new BusinessException(BusinessMessages.AgendamentoNaoEncontrado);
 
             if (agendamento.Status == StatusEnum.Realizado)
-                throw new BusinessException(string.Format(BusinessMessages.AgendamentoRealizadoCancel));
+                throw new BusinessException(BusinessMessages.AgendamentoRealizadoCancel);
 
             agendamento.Status = StatusEnum.Cancelado;
-            _vacinaPacienteRepositorio.Atualizar(id, agendamento);
+            await _vacinaPacienteRepositorio.Atualizar(agendamento);
         }
 
-        public void RemoverAgendamento(int id)
+        public async Task RemoverAgendamento(int id)
         {
-            var agendamento = _vacinaPacienteRepositorio.ObterId(id);
+            var agendamento = await _vacinaPacienteRepositorio.ObterPorId(id);
             if (agendamento == null)
-                throw new BusinessException(string.Format(BusinessMessages.PacienteNaoEncontrado));
+                throw new BusinessException(BusinessMessages.AgendamentoNaoEncontrado);
 
             if (agendamento.Status == StatusEnum.Realizado)
-                throw new BusinessException(string.Format(BusinessMessages.AgendamentoRealizadoDelete));
+                throw new BusinessException(BusinessMessages.AgendamentoRealizadoDelete);
 
-            _vacinaPacienteRepositorio.Remover(id);
+            await _vacinaPacienteRepositorio.DeletarPorId(id);
         }
 
-        private VacinaPacienteDTO ConverterParaDTO(VacinaPaciente vacinaPaciente)
+        private VacinaPacienteDTO ConverterParaDTO(VacinaPaciente v) => new()
         {
-            return new VacinaPacienteDTO
-            {
-                IdVacinaPaciente = vacinaPaciente.IdVacinaPaciente,
-                IdPaciente = vacinaPaciente.IdPaciente,
-                IdVacina = vacinaPaciente.IdVacina,
-                DataVacinacao = vacinaPaciente.DataVacinacao,
-                HoraVacinacao = vacinaPaciente.HoraVacinacao,
-                Status = vacinaPaciente.Status.ToString(),
-                LocalVacinacao = vacinaPaciente.LocalVacinacao,
-                Observacoes = vacinaPaciente.Observacoes,
-                DataCriacao = vacinaPaciente.DataCriacao
-            };
-        }
+            IdVacinaPaciente = v.Id,
+            IdPaciente = v.IdPaciente,
+            IdVacina = v.IdVacina,
+            DataVacinacao = v.DataVacinacao,
+            HoraVacinacao = v.HoraVacinacao,
+            Status = v.Status.ToString(),
+            LocalVacinacao = v.LocalVacinacao,
+            Observacoes = v.Observacoes,
+            DataCriacao = v.DataCriacao
+        };
     }
 }

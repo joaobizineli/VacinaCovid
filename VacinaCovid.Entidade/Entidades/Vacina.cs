@@ -1,8 +1,7 @@
 ﻿namespace VacinaCovid.Entidade.Entidades
 {
-    public class Vacina
+    public class Vacina : IdEntidade<int>
     {
-        public int IdVacina { get; set; }
         public string Nome { get; set; }
         public string Fabricante { get; set; }
         public string Lote { get; set; }

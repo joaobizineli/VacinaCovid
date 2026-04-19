@@ -1,19 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using VacinaCovid.Entidade.Entidades;
-using VacinaCovid.Entidade.EntidadesDTO;
+﻿using VacinaCovid.Entidade.Entidades;
 
 namespace VacinaCovid.Repositorio.Interface.IRepositorios
 {
-    public interface IPacienteRepositorio
+    public interface IPacienteRepositorio : IRepositorioBase<Paciente>
     {
-        void Adicionar(Paciente paciente);
-        List<Paciente> Listar();
-        Paciente ObterId(int id);
-        void Atualizar(int id, string nomeAtualizado, DateTime dataNascimento);
-        void Remover(int id);
     }
 }

@@ -4,7 +4,7 @@ using Microsoft.OpenApi.Any;
 using Microsoft.OpenApi.Models;
 using VacinaCovid.Configuration;
 
-namespace ControleTarefas.WebApi
+namespace VacinaCovid.WebApi
 {
     public class Startup
     {
@@ -19,6 +19,7 @@ namespace ControleTarefas.WebApi
             services.AddControllers();
 
             services.AddDependencyInjection();
+            services.AddDatabaseConfiguration(Configuracao);
             services.AddFluentConfiguration();
 
             services.AddScoped<ApiMiddleware>();

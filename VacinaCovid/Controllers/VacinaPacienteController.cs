@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Reflection;
 using VacinaCovid.Entidade.EntidadesDTO;
 using VacinaCovid.Entidade.Model;
 using VacinaCovid.Negocios.Interface.INegocios;
@@ -8,7 +7,7 @@ using VacinaCovid.Validador.Manual;
 namespace VacinaCovid.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class VacinaPacientesController : ControllerBase
     {
         private readonly ILogger<VacinaPacientesController> _logger;
@@ -23,70 +22,65 @@ namespace VacinaCovid.Controllers
         }
 
         [HttpPost("AgendarVacina")]
-        public ActionResult<List<VacinaPacienteDTO>> AgendarVacina(
-            [FromBody] VacinaPacienteModel model)
+        public async Task<List<VacinaPacienteDTO>> AgendarVacina([FromBody] VacinaPacienteModel model)
         {
-            _logger.LogInformation($"Agendando vacina para paciente ID: {model.IdPaciente}, Vacina ID: {model.IdVacina}, Data: {model.DataVacinacao}, Hora: {model.HoraVacinacao}, Local: {model.LocalVacinacao}");
+            _logger.LogInformation($"Agendando vacina para paciente ID: {model.IdPaciente}");
             VacinaCovidValidador.Validar(model);
-            return _vacinaPacienteNegocio.AgendarVacina(
+            return await _vacinaPacienteNegocio.AgendarVacina(
                 model.IdPaciente,
                 model.IdVacina,
                 model.DataVacinacao,
                 model.HoraVacinacao,
                 model.LocalVacinacao);
         }
-        
 
         [HttpGet("ListarAgendamentos")]
-        public ActionResult<List<VacinaPacienteDTO>> ListarAgendamentos()
+        public async Task<List<VacinaPacienteDTO>> ListarAgendamentos()
         {
-            _logger.LogInformation("Listando todos os agendamentos de vacina.");
-            return _vacinaPacienteNegocio.ListarAgendamentos();
+            _logger.LogInformation("Listando todos os agendamentos.");
+            return await _vacinaPacienteNegocio.ListarAgendamentos();
         }
 
         [HttpGet("ListarAgendamentosPaciente")]
-        public ActionResult<List<VacinaPacienteDTO>> ListarAgendamentosPaciente(int idPaciente)
+        public async Task<List<VacinaPacienteDTO>> ListarAgendamentosPaciente(int idPaciente)
         {
-            _logger.LogInformation($"Listando agendamentos para paciente ID: {idPaciente}");
-            return _vacinaPacienteNegocio.ListarAgendamentosPaciente(idPaciente);
+            _logger.LogInformation($"Listando agendamentos do paciente ID: {idPaciente}");
+            return await _vacinaPacienteNegocio.ListarAgendamentosPaciente(idPaciente);
         }
 
         [HttpGet("ListarAgendamentosPorData")]
-        public ActionResult<List<VacinaPacienteDTO>> ListarAgendamentosPorData(DateTime data)
+        public async Task<List<VacinaPacienteDTO>> ListarAgendamentosPorData(DateTime data)
         {
             _logger.LogInformation($"Listando agendamentos para data: {data}");
-            return _vacinaPacienteNegocio.ListarAgendamentosPorData(data);
+            return await _vacinaPacienteNegocio.ListarAgendamentosPorData(data);
         }
 
         [HttpGet("ObterAgendamento")]
-        public ActionResult<VacinaPacienteDTO> ObterAgendamento(int id)
+        public async Task<VacinaPacienteDTO> ObterAgendamento(int id)
         {
-            _logger.LogInformation($"Obtendo agendamento com ID: {id}");
-            return _vacinaPacienteNegocio.ObterAgendamento(id);
+            _logger.LogInformation($"Obtendo agendamento ID: {id}");
+            return await _vacinaPacienteNegocio.ObterAgendamento(id);
         }
 
         [HttpPut("MarcarComoRealizado")]
-        public ActionResult MarcarComoRealizado(int id, string observacoes = "")
+        public async Task MarcarComoRealizado(int id, string observacoes = "")
         {
-            _logger.LogInformation($"Marcando agendamento ID: {id} como realizado. Observações: {observacoes}");
-            _vacinaPacienteNegocio.MarcarComoRealizado(id, observacoes);
-            return Ok("Agendamento marcado como realizado.");
+            _logger.LogInformation($"Marcando agendamento ID: {id} como realizado.");
+            await _vacinaPacienteNegocio.MarcarComoRealizado(id, observacoes);
         }
 
         [HttpPut("CancelarAgendamento")]
-        public ActionResult CancelarAgendamento(int id)
+        public async Task CancelarAgendamento(int id)
         {
             _logger.LogInformation($"Cancelando agendamento ID: {id}");
-            _vacinaPacienteNegocio.CancelarAgendamento(id);
-            return Ok("Agendamento cancelado.");
+            await _vacinaPacienteNegocio.CancelarAgendamento(id);
         }
 
         [HttpDelete("RemoverAgendamento")]
-        public ActionResult RemoverAgendamento(int id)
+        public async Task RemoverAgendamento(int id)
         {
             _logger.LogInformation($"Removendo agendamento ID: {id}");
-            _vacinaPacienteNegocio.RemoverAgendamento(id);
-            return NoContent();
+            await _vacinaPacienteNegocio.RemoverAgendamento(id);
         }
     }
 }
