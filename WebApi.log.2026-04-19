@@ -1,0 +1,74 @@
+2026-04-19 00:32:36,958|[INFO ]|[1]|Iniciando a API
+2026-04-19 00:32:39,524|[INFO ]|[13]|Serviço exevutado com sucesso: GET /swagger/index.html 0ms
+2026-04-19 00:32:44,880|[INFO ]|[10]|Serviço exevutado com sucesso: GET /Pacientes/ListarPacientes 27ms
+2026-04-19 00:32:50,985|[INFO ]|[10]|Serviço exevutado com sucesso: GET /VacinaPacientes/ListarAgendamentos 13ms
+2026-04-19 17:00:43,306|[INFO ]|[1]|Iniciando a API
+2026-04-19 17:00:46,081|[INFO ]|[16]|Serviço exevutado com sucesso: GET /swagger/index.html 0ms
+2026-04-19 17:01:17,120|[ERROR]|[16]|Erro no serviço /api/Pacientes/ListarPacientes / Mensagens: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) [18003]
+2026-04-19 17:11:22,245|[ERROR]|[32]|Erro no serviço /api/VacinaPacientes/ListarAgendamentos / Mensagens: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) [9902]
+2026-04-19 17:11:22,245|[ERROR]|[34]|Erro no serviço /api/Pacientes/ListarPacientes / Mensagens: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) [17182]
+2026-04-19 17:12:06,256|[INFO ]|[1]|Iniciando a API
+2026-04-19 17:12:07,745|[INFO ]|[16]|Serviço exevutado com sucesso: GET /swagger/index.html 0ms
+2026-04-19 17:12:13,457|[ERROR]|[16]|Erro no serviço /api/Pacientes/ListarPacientes / Mensagens: Format of the initialization string does not conform to specification starting at index 51. [521]
+2026-04-19 17:12:21,993|[ERROR]|[13]|Erro no serviço /api/Pacientes/ListarPacientes / Mensagens: Format of the initialization string does not conform to specification starting at index 51. [83]
+2026-04-19 17:12:22,545|[ERROR]|[16]|Erro no serviço /api/Pacientes/ListarPacientes / Mensagens: Format of the initialization string does not conform to specification starting at index 51. [56]
+2026-04-19 17:12:22,679|[ERROR]|[13]|Erro no serviço /api/Pacientes/ListarPacientes / Mensagens: Format of the initialization string does not conform to specification starting at index 51. [51]
+2026-04-19 17:12:22,830|[ERROR]|[15]|Erro no serviço /api/Pacientes/ListarPacientes / Mensagens: Format of the initialization string does not conform to specification starting at index 51. [54]
+2026-04-19 17:12:22,969|[ERROR]|[13]|Erro no serviço /api/Pacientes/ListarPacientes / Mensagens: Format of the initialization string does not conform to specification starting at index 51. [52]
+2026-04-19 17:12:23,237|[ERROR]|[13]|Erro no serviço /api/Pacientes/ListarPacientes / Mensagens: Format of the initialization string does not conform to specification starting at index 51. [57]
+2026-04-19 17:12:23,376|[ERROR]|[13]|Erro no serviço /api/Pacientes/ListarPacientes / Mensagens: Format of the initialization string does not conform to specification starting at index 51. [58]
+2026-04-19 17:12:23,500|[ERROR]|[15]|Erro no serviço /api/Pacientes/ListarPacientes / Mensagens: Format of the initialization string does not conform to specification starting at index 51. [56]
+2026-04-19 17:12:23,635|[ERROR]|[16]|Erro no serviço /api/Pacientes/ListarPacientes / Mensagens: Format of the initialization string does not conform to specification starting at index 51. [59]
+2026-04-19 17:12:23,728|[ERROR]|[16]|Erro no serviço /api/Pacientes/ListarPacientes / Mensagens: Format of the initialization string does not conform to specification starting at index 51. [60]
+2026-04-19 17:22:24,955|[INFO ]|[1]|Iniciando a API
+2026-04-19 17:22:26,134|[INFO ]|[14]|Serviço exevutado com sucesso: GET /swagger/index.html 0ms
+2026-04-19 17:22:32,910|[ERROR]|[16]|Erro no serviço /api/Pacientes/ListarPacientes / Mensagens: Invalid column name 'dat_vacina'. [1041]
+2026-04-19 17:22:44,471|[ERROR]|[18]|Erro no serviço /api/Pacientes/ListarPacientes / Mensagens: Invalid column name 'dat_vacina'. [131]
+2026-04-19 17:24:16,945|[INFO ]|[1]|Iniciando a API
+2026-04-19 17:24:18,611|[INFO ]|[13]|Serviço exevutado com sucesso: GET /swagger/index.html 0ms
+2026-04-19 17:24:25,064|[INFO ]|[15]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 939ms
+2026-04-19 17:26:36,252|[INFO ]|[1]|Iniciando a API
+2026-04-19 17:26:37,332|[INFO ]|[10]|Serviço exevutado com sucesso: GET /swagger/index.html 0ms
+2026-04-19 17:26:43,311|[INFO ]|[15]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 857ms
+2026-04-19 17:26:53,640|[INFO ]|[13]|Serviço exevutado com sucesso: GET /api/Pacientes/ObterPaciente 179ms
+2026-04-19 17:27:00,725|[ERROR]|[18]|Erro no serviço /api/VacinaPacientes/ListarAgendamentos / Mensagens: Invalid object name 'tb_vacinacao'. [151]
+2026-04-19 17:27:01,887|[ERROR]|[18]|Erro no serviço /api/VacinaPacientes/ListarAgendamentos / Mensagens: Invalid object name 'tb_vacinacao'. [83]
+2026-04-19 17:28:55,788|[INFO ]|[1]|Iniciando a API
+2026-04-19 17:28:57,437|[INFO ]|[13]|Serviço exevutado com sucesso: GET /swagger/index.html 0ms
+2026-04-19 17:29:03,691|[ERROR]|[10]|Erro no serviço /api/VacinaPacientes/ListarAgendamentos / Mensagens: Invalid column name 'tb_agendamento'.
+Invalid column name 'dat_atualizacao'.
+Invalid column name 'dat_vacinacao'.
+Invalid column name 'hor_vacinacao'.
+Invalid column name 'id_vacina'.
+Invalid column name 'dsc_local'.
+Invalid column name 'dsc_observacoes'. [1114]
+2026-04-19 17:30:20,864|[INFO ]|[1]|Iniciando a API
+2026-04-19 17:30:21,952|[INFO ]|[13]|Serviço exevutado com sucesso: GET /swagger/index.html 0ms
+2026-04-19 17:30:28,010|[ERROR]|[15]|Erro no serviço /api/VacinaPacientes/ListarAgendamentos / Mensagens: Invalid column name 'tb_agendamento'.
+Invalid column name 'dat_vacinacao'.
+Invalid column name 'hor_vacinacao'. [917]
+2026-04-19 17:31:07,092|[INFO ]|[1]|Iniciando a API
+2026-04-19 17:31:08,544|[INFO ]|[13]|Serviço exevutado com sucesso: GET /swagger/index.html 0ms
+2026-04-19 17:31:14,851|[INFO ]|[13]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 967ms
+2026-04-19 17:31:18,694|[INFO ]|[15]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 47ms
+2026-04-19 17:31:21,362|[INFO ]|[13]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 53ms
+2026-04-19 17:31:22,146|[INFO ]|[18]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 7ms
+2026-04-19 17:31:28,148|[INFO ]|[18]|Serviço exevutado com sucesso: GET /api/Pacientes/ObterPaciente 128ms
+2026-04-19 17:31:28,759|[INFO ]|[15]|Serviço exevutado com sucesso: GET /api/Pacientes/ObterPaciente 16ms
+2026-04-19 17:31:49,207|[INFO ]|[15]|Serviço exevutado com sucesso: PUT /api/Pacientes/AlterarPaciente 88ms
+2026-04-19 17:32:40,252|[INFO ]|[1]|Iniciando a API
+2026-04-19 17:32:41,335|[INFO ]|[10]|Serviço exevutado com sucesso: GET /swagger/index.html 0ms
+2026-04-19 17:32:46,627|[ERROR]|[18]|Erro no serviço /api/VacinaPacientes/ListarAgendamentos / Mensagens: Data is Null. This method or property cannot be called on Null values. [877]
+2026-04-19 17:33:05,461|[ERROR]|[18]|Erro no serviço /api/VacinaPacientes/ListarAgendamentosPaciente / Mensagens: Data is Null. This method or property cannot be called on Null values. [232]
+2026-04-19 17:34:00,273|[INFO ]|[1]|Iniciando a API
+2026-04-19 17:34:01,809|[INFO ]|[13]|Serviço exevutado com sucesso: GET /swagger/index.html 0ms
+2026-04-19 17:34:07,394|[INFO ]|[15]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 828ms
+2026-04-19 17:34:14,191|[INFO ]|[18]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentosPaciente 174ms
+2026-04-19 17:55:41,303|[INFO ]|[1]|Iniciando a API
+2026-04-19 17:55:42,892|[INFO ]|[10]|Serviço exevutado com sucesso: GET /swagger/index.html 0ms
+2026-04-19 17:55:49,333|[INFO ]|[17]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 940ms
+2026-04-19 22:10:53,568|[INFO ]|[1]|Iniciando a API
+2026-04-19 22:10:58,290|[INFO ]|[13]|Serviço exevutado com sucesso: GET /swagger 0ms
+2026-04-19 22:11:15,799|[INFO ]|[18]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 2833ms
+2026-04-19 22:11:28,507|[INFO ]|[18]|Serviço exevutado com sucesso: DELETE /api/Pacientes/RemoverPaciente 628ms
+2026-04-19 22:11:34,757|[INFO ]|[17]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 38ms

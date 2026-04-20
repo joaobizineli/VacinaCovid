@@ -1,0 +1,29 @@
+2026-04-17 18:34:34,941|[INFO ]|[1]|Iniciando a API
+2026-04-17 18:36:49,688|[INFO ]|[1]|Iniciando a API
+2026-04-17 18:37:35,447|[INFO ]|[1]|Iniciando a API
+2026-04-17 18:37:38,191|[INFO ]|[15]|Serviço exevutado com sucesso: GET /swagger/index.html 0ms
+2026-04-17 18:37:47,868|[INFO ]|[19]|Serviço exevutado com sucesso: GET /Vacinas/ListarPacientes 18ms
+2026-04-17 18:37:53,246|[INFO ]|[18]|Serviço exevutado com sucesso: GET /Vacinas/ListarPacientes 0ms
+2026-04-17 18:38:04,682|[ERROR]|[15]|Erro no serviço /Vacinas/BuscarPacienteId / Mensagens: "21321312" não encontrado. [7276]
+2026-04-17 18:38:18,231|[ERROR]|[18]|Erro no serviço /Vacinas/BuscarPacienteId / Mensagens: "21321312" não encontrado. [35]
+2026-04-17 18:38:30,646|[ERROR]|[21]|Erro no serviço /Vacinas/BuscarPacienteId / Mensagens: O ID do paciente deve ser um número positivo. [26]
+2026-04-17 18:38:40,758|[ERROR]|[21]|Erro no serviço /Vacinas/BuscarPacienteId / Mensagens: "124213" não encontrado. [28]
+2026-04-17 21:43:44,867|[INFO ]|[1]|Iniciando a API
+2026-04-17 21:43:46,524|[INFO ]|[15]|Serviço exevutado com sucesso: GET /swagger/index.html 0ms
+2026-04-17 21:48:50,868|[INFO ]|[1]|Iniciando a API
+2026-04-17 21:48:52,395|[INFO ]|[13]|Serviço exevutado com sucesso: GET /swagger/index.html 0ms
+2026-04-17 21:48:57,947|[INFO ]|[15]|Serviço exevutado com sucesso: GET /Vacinas/ListarPacientes 26ms
+2026-04-17 21:49:38,270|[INFO ]|[13]|Serviço exevutado com sucesso: POST /Vacinas/AgendarVacina 37ms
+2026-04-17 21:49:48,715|[ERROR]|[18]|Erro no serviço /Vacinas/AgendarVacina / Mensagens: Paciente 32 não encontrado. [70]
+2026-04-17 21:49:53,999|[INFO ]|[18]|Serviço exevutado com sucesso: POST /Vacinas/AgendarVacina 15ms
+2026-04-17 21:50:04,309|[INFO ]|[18]|Serviço exevutado com sucesso: GET /Vacinas/ListarAgendamentos 1ms
+2026-04-17 21:50:09,875|[ERROR]|[13]|Erro no serviço /Vacinas/ListarAgendamentosPaciente / Mensagens: Paciente 0 não encontrado. [29]
+2026-04-17 21:50:16,140|[INFO ]|[18]|Serviço exevutado com sucesso: GET /Vacinas/ListarAgendamentosPorData 2ms
+2026-04-17 21:50:17,040|[INFO ]|[15]|Serviço exevutado com sucesso: GET /Vacinas/ListarAgendamentosPorData 0ms
+2026-04-17 21:50:25,436|[INFO ]|[15]|Serviço exevutado com sucesso: GET /Vacinas/ListarAgendamentosPorData 0ms
+2026-04-17 21:50:36,236|[INFO ]|[18]|Serviço exevutado com sucesso: GET /Vacinas/ListarAgendamentosPorData 0ms
+2026-04-17 21:51:04,452|[INFO ]|[18]|Serviço exevutado com sucesso: GET /Vacinas/ListarAgendamentosPorData 3ms
+2026-04-17 21:51:26,889|[INFO ]|[3]|Serviço exevutado com sucesso: GET /Vacinas/ObterAgendamento 3ms
+2026-04-17 21:51:40,600|[INFO ]|[23]|Serviço exevutado com sucesso: DELETE /Vacinas/RemoverAgendamento 10ms
+2026-04-17 21:51:41,961|[ERROR]|[23]|Erro no serviço /Vacinas/RemoverAgendamento / Mensagens: Agendamento 3 não encontrado. [25]
+2026-04-17 21:51:47,394|[INFO ]|[21]|Serviço exevutado com sucesso: GET /Vacinas/ListarAgendamentos 0ms

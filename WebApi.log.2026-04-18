@@ -1,0 +1,61 @@
+2026-04-18 13:49:51,501|[INFO ]|[1]|Iniciando a API
+2026-04-18 13:49:53,385|[INFO ]|[15]|Serviço exevutado com sucesso: GET /swagger/index.html 0ms
+2026-04-18 13:54:02,649|[INFO ]|[1]|Iniciando a API
+2026-04-18 13:54:04,112|[INFO ]|[10]|Serviço exevutado com sucesso: GET /swagger/index.html 0ms
+2026-04-18 13:54:12,513|[INFO ]|[9]|Serviço exevutado com sucesso: GET /Pacientes/ListarPacientes 34ms
+2026-04-18 13:54:18,266|[INFO ]|[13]|Serviço exevutado com sucesso: GET /VacinaPacientes/ListarAgendamentos 17ms
+2026-04-18 14:12:18,178|[INFO ]|[1]|Iniciando a API
+2026-04-18 14:12:20,113|[INFO ]|[15]|Serviço exevutado com sucesso: GET /swagger/index.html 0ms
+2026-04-18 14:12:27,888|[INFO ]|[11]|Serviço exevutado com sucesso: GET /VacinaPacientes/ListarAgendamentos 30ms
+2026-04-18 14:52:34,879|[INFO ]|[1]|Iniciando a API
+2026-04-18 14:52:36,737|[INFO ]|[13]|Serviço exevutado com sucesso: GET /swagger/index.html 0ms
+2026-04-18 14:57:41,590|[INFO ]|[1]|Iniciando a API
+2026-04-18 14:57:43,287|[INFO ]|[10]|Serviço exevutado com sucesso: GET /swagger/index.html 0ms
+2026-04-18 14:57:45,036|[INFO ]|[11]|Serviço exevutado com sucesso: GET /swagger/index.html 0ms
+2026-04-18 15:12:58,790|[INFO ]|[1]|Iniciando a API
+2026-04-18 15:12:59,823|[INFO ]|[13]|Serviço exevutado com sucesso: GET /swagger/index.html 0ms
+2026-04-18 15:13:12,859|[ERROR]|[10]|Erro no serviço /VacinaPacientes/AgendarVacina / Mensagens: Exception of type 'VacinaCovid.Utilitarios.Excepetions.BusinessListException' was thrown. [2060]
+2026-04-18 15:13:31,413|[ERROR]|[16]|Erro no serviço /VacinaPacientes/AgendarVacina / Mensagens: Exception of type 'VacinaCovid.Utilitarios.Excepetions.BusinessListException' was thrown. [11094]
+2026-04-18 15:42:41,759|[INFO ]|[1]|Iniciando a API
+2026-04-18 15:42:43,258|[INFO ]|[9]|Serviço exevutado com sucesso: GET /swagger/index.html 0ms
+2026-04-18 15:43:03,328|[ERROR]|[17]|Erro no serviço /VacinaPacientes/AgendarVacina / Mensagens: Exception of type 'VacinaCovid.Utilitarios.Excepetions.BusinessListException' was thrown. [13088]
+2026-04-18 15:45:05,284|[INFO ]|[1]|Iniciando a API
+2026-04-18 15:45:06,797|[INFO ]|[14]|Serviço exevutado com sucesso: GET /swagger/index.html 0ms
+2026-04-18 15:45:13,728|[ERROR]|[13]|Erro no serviço /VacinaPacientes/AgendarVacina / Mensagens: Paciente 0 não encontrado. [106]
+2026-04-18 15:45:26,147|[ERROR]|[15]|Erro no serviço /VacinaPacientes/AgendarVacina / Mensagens: Paciente -1 não encontrado. [30]
+2026-04-18 15:45:42,802|[INFO ]|[1]|Iniciando a API
+2026-04-18 15:45:44,199|[INFO ]|[14]|Serviço exevutado com sucesso: GET /swagger/index.html 0ms
+2026-04-18 15:45:51,471|[ERROR]|[14]|Erro no serviço /VacinaPacientes/AgendarVacina / Mensagens: Paciente 0 não encontrado. [100]
+2026-04-18 15:45:58,066|[ERROR]|[14]|Erro no serviço /VacinaPacientes/AgendarVacina / Mensagens: Paciente 1238 não encontrado. [30]
+2026-04-18 15:46:10,232|[ERROR]|[14]|Erro no serviço /VacinaPacientes/AgendarVacina / Mensagens: Horário deve estar entre 08:00 e 17:00. [29]
+2026-04-18 15:48:28,413|[INFO ]|[1]|Iniciando a API
+2026-04-18 15:48:30,392|[INFO ]|[16]|Serviço exevutado com sucesso: GET /swagger/index.html 0ms
+2026-04-18 15:48:37,541|[ERROR]|[15]|Erro no serviço /VacinaPacientes/AgendarVacina / Mensagens: Paciente 0 não encontrado. [93]
+2026-04-18 15:49:32,860|[INFO ]|[1]|Iniciando a API
+2026-04-18 15:49:34,837|[INFO ]|[16]|Serviço exevutado com sucesso: GET /swagger/index.html 0ms
+2026-04-18 15:49:35,888|[INFO ]|[16]|Serviço exevutado com sucesso: GET /swagger/index.html 0ms
+2026-04-18 15:49:52,042|[ERROR]|[16]|Erro no serviço /VacinaPacientes/AgendarVacina / Mensagens: Paciente 0 não encontrado. [87]
+2026-04-18 15:52:24,418|[INFO ]|[1]|Iniciando a API
+2026-04-18 15:52:25,995|[INFO ]|[15]|Serviço exevutado com sucesso: GET /swagger/index.html 0ms
+2026-04-18 15:52:33,892|[ERROR]|[17]|Erro no serviço /VacinaPacientes/AgendarVacina / Mensagens: Paciente -1 não encontrado. [85]
+2026-04-18 15:59:23,348|[INFO ]|[1]|Iniciando a API
+2026-04-18 15:59:24,883|[INFO ]|[13]|Serviço exevutado com sucesso: GET /swagger/index.html 0ms
+2026-04-18 15:59:29,993|[INFO ]|[16]|Serviço exevutado com sucesso: POST /VacinaPacientes/AgendarVacina 105ms
+2026-04-18 15:59:45,225|[INFO ]|[1]|Iniciando a API
+2026-04-18 15:59:46,456|[INFO ]|[10]|Serviço exevutado com sucesso: GET /swagger/index.html 0ms
+2026-04-18 15:59:54,926|[INFO ]|[14]|Serviço exevutado com sucesso: POST /VacinaPacientes/AgendarVacina 87ms
+2026-04-18 16:41:53,583|[INFO ]|[1]|Iniciando a API
+2026-04-18 16:41:55,672|[INFO ]|[15]|Serviço exevutado com sucesso: GET /swagger/index.html 0ms
+2026-04-18 16:42:15,608|[INFO ]|[13]|Serviço exevutado com sucesso: GET /VacinaPacientes/ListarAgendamentos 32ms
+2026-04-18 16:42:25,978|[ERROR]|[16]|Erro no serviço /VacinaPacientes/CancelarAgendamento / Mensagens: Não é possível cancelar agendamentos já realizados. [109]
+2026-04-18 16:42:50,611|[ERROR]|[16]|Erro no serviço /VacinaPacientes/RemoverAgendamento / Mensagens: Não é possível deletar agendamentos já realizados. [39]
+2026-04-18 18:52:49,137|[INFO ]|[1]|Iniciando a API
+2026-04-18 18:52:51,796|[INFO ]|[13]|Serviço exevutado com sucesso: GET /swagger/index.html 0ms
+2026-04-18 18:53:01,467|[INFO ]|[8]|Serviço exevutado com sucesso: GET /Pacientes/ListarPacientes 30ms
+2026-04-18 18:53:16,794|[INFO ]|[13]|Serviço exevutado com sucesso: GET /VacinaPacientes/ListarAgendamentos 12ms
+2026-04-18 18:53:25,882|[INFO ]|[13]|Serviço exevutado com sucesso: GET /VacinaPacientes/ListarAgendamentosPaciente 77ms
+2026-04-18 18:53:38,317|[INFO ]|[10]|Serviço exevutado com sucesso: GET /VacinaPacientes/ListarAgendamentosPorData 24ms
+2026-04-18 18:53:44,195|[INFO ]|[15]|Serviço exevutado com sucesso: GET /VacinaPacientes/ListarAgendamentosPorData 2ms
+2026-04-18 18:54:02,585|[INFO ]|[13]|Serviço exevutado com sucesso: GET /VacinaPacientes/ListarAgendamentosPorData 2ms
+2026-04-18 18:54:08,590|[INFO ]|[15]|Serviço exevutado com sucesso: GET /VacinaPacientes/ObterAgendamento 3ms
+2026-04-18 18:54:46,016|[INFO ]|[19]|Serviço exevutado com sucesso: GET /favicon.ico 0ms
