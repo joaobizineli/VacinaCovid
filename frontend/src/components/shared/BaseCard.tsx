@@ -15,7 +15,7 @@ export function BaseCard({ title, subtitle, children, className }: BaseCardProps
         <span className="text-[15px] font-semibold text-[#575E55]">{title}</span>
         {subtitle && <span className="text-[13px] text-[#aaa] font-normal">{subtitle}</span>}
       </CardHeader>
-      <CardContent className="p-4 h-full">
+      <CardContent className="p-3">
         {children}
       </CardContent>
     </Card>
