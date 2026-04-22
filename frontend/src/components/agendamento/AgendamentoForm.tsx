@@ -44,7 +44,7 @@ export function AgendamentoForm() {
             <option value="3">COVID-19 - Coronavac</option>
           </select>
         </div>
-        <div className="flex flex-col gap-[4px] h-full">
+        <div className="flex flex-col gap-[4px] ">
           <Label htmlFor="local" className="text-[13px] text-[#777]">
             Local de vacinação
           </Label>
