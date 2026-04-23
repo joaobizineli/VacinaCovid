@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Badge } from "../ui/badge";
+import { Badge } from "@/components/ui/badge";
 
 export function Navbar() {
   return (
@@ -7,7 +7,12 @@ export function Navbar() {
       <div className="flex items-center gap-2">
         <svg width="24" height="24" viewBox="0 0 20 20" fill="none">
           <circle cx="10" cy="10" r="9" stroke="#CDE9CA" strokeWidth="1.5" />
-          <path d="M6 10h8M10 6v8" stroke="#CDE9CA" strokeWidth="1.5" strokeLinecap="round" />
+          <path
+            d="M6 10h8M10 6v8"
+            stroke="#CDE9CA"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+          />
         </svg>
         <span className="text-white text-[17px] font-medium">Vacina Covid</span>
       </div>

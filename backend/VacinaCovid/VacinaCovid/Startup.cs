@@ -25,7 +25,6 @@ namespace VacinaCovid.WebApi
             services.AddScoped<ApiMiddleware>();
     
 
-
             services.AddSwaggerGen(c =>
             {
                 c.MapType(typeof(TimeSpan), () => new() { Type = "string", Example = new OpenApiString("00:00:00") });
@@ -49,6 +48,16 @@ namespace VacinaCovid.WebApi
 
                 c.AddSecurityRequirement(new() { { new() { Reference = new() { Type = ReferenceType.SecurityScheme, Id = "Bearer" } }, Array.Empty<string>() } });
             });
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowFrontend", policy =>
+                {
+                    policy.WithOrigins("http://localhost:5173")
+                          .AllowAnyHeader()
+                          .AllowAnyMethod();
+                });
+            });
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -65,6 +74,8 @@ namespace VacinaCovid.WebApi
                 c.RoutePrefix = string.Empty;
             });
 
+            app.UseCors("AllowFrontend");
+            
             app.UseRouting();
 
             app.UseAuthentication();
