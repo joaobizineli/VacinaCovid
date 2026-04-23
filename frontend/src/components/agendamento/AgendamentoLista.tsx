@@ -1,30 +1,35 @@
 import { useAgendamentoStore } from "@/store/agendamentoStore";
 import { usePacienteStore } from "@/store/pacienteStore";
 import { formatarHora, formatarDataExibicao } from "@/lib/utils/date";
-import { BaseCard } from "../shared/BaseCard";
+import { BaseCard } from "@/components/shared/BaseCard";
 import type { Agendamento } from "@/types";
 import { useShallow } from "zustand/react/shallow";
 
-
-
 export function AgendamentoLista() {
   const diaAtual = useAgendamentoStore((s) => s.diaAtual);
-  const agendamentos = useAgendamentoStore(useShallow((s) => s.agendamentos.filter((a) => a.dataVacinacao.slice(0, 10) === diaAtual)));
-  const { diaAnterior, proximoDia, marcarRealizado, cancelarAgendamento } = useAgendamentoStore(
-  useShallow((s) => ({
-    diaAnterior: s.diaAnterior,
-    proximoDia: s.proximoDia,
-    marcarRealizado: s.marcarRealizado,
-    cancelarAgendamento: s.cancelarAgendamento,
-  }))
-);
+  const agendamentos = useAgendamentoStore(
+    useShallow((s) =>
+      s.agendamentos.filter((a) => a.dataVacinacao.slice(0, 10) === diaAtual),
+    ),
+  );
+  const { diaAnterior, proximoDia, marcarRealizado, cancelarAgendamento } =
+    useAgendamentoStore(
+      useShallow((s) => ({
+        diaAnterior: s.diaAnterior,
+        proximoDia: s.proximoDia,
+        marcarRealizado: s.marcarRealizado,
+        cancelarAgendamento: s.cancelarAgendamento,
+      })),
+    );
   const pacientes = usePacienteStore((s) => s.pacientes);
 
   const manha = agendamentos.filter((a) => parseInt(a.horaVacinacao) < 12);
   const tarde = agendamentos.filter((a) => parseInt(a.horaVacinacao) >= 12);
 
   function getNomePaciente(id: number): string {
-    return pacientes.find((p) => p.idPaciente === id)?.nome ?? `Paciente #${id}`;
+    return (
+      pacientes.find((p) => p.idPaciente === id)?.nome ?? `Paciente #${id}`
+    );
   }
 
   return (
@@ -51,7 +56,9 @@ export function AgendamentoLista() {
       <div className="flex flex-col gap-3 overflow-y-auto max-h-[430px]">
         {manha.length > 0 && (
           <>
-            <p className="text-[11px] text-[#bbb] uppercase tracking-[0.6px]">Manhã</p>
+            <p className="text-[11px] text-[#bbb] uppercase tracking-[0.6px]">
+              Manhã
+            </p>
             <div className="flex flex-col gap-[7px]">
               {manha.map((a) => (
                 <Item
@@ -68,7 +75,9 @@ export function AgendamentoLista() {
 
         {tarde.length > 0 && (
           <>
-            <p className="text-[11px] text-[#bbb] uppercase tracking-[0.6px]">Tarde</p>
+            <p className="text-[11px] text-[#bbb] uppercase tracking-[0.6px]">
+              Tarde
+            </p>
             <div className="flex flex-col gap-[7px]">
               {tarde.map((a) => (
                 <Item
@@ -119,9 +128,13 @@ function Item({
         <div className="text-[13px] font-medium text-[#575E55]">
           {nomePaciente}
         </div>
-        <div className="text-[11px] text-[#aaa] mt-[1px]">{agendamento.localVacinacao}</div>
+        <div className="text-[11px] text-[#aaa] mt-[1px]">
+          {agendamento.localVacinacao}
+        </div>
       </div>
-      <span className={`text-[11px] px-[9px] py-[3px] rounded-full ${statusCls[agendamento.status]}`}>
+      <span
+        className={`text-[11px] px-[9px] py-[3px] rounded-full ${statusCls[agendamento.status]}`}
+      >
         {agendamento.status}
       </span>
       {agendamento.status === "Agendado" && (

@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader } from "../ui/card";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import type { ReactNode } from "react";
 
 interface BaseCardProps {

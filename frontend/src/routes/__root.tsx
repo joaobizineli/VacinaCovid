@@ -1,6 +1,6 @@
 import { createRootRoute, Outlet } from "@tanstack/react-router";
-import { Navbar } from "../components/layout/NavBar";
-import { SuccessModal } from "../components/shared/SuccessModal";
+import { Navbar } from "@/components/layout/NavBar";
+import { SuccessModal } from "@/components/shared/SuccessModal";
 
 export const Route = createRootRoute({
   component: () => (

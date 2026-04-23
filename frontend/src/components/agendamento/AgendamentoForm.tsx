@@ -1,54 +1,70 @@
-import { BaseCard } from "../shared/BaseCard";
-import { Button } from "../ui/button";
-import { Input } from "../ui/input";
-import { Label } from "../ui/label";
-import { useModalService } from "@/services/modalService";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "../ui/select";
+import { useAgendamentoForm } from "@/hooks/useAgendamentoForm";
+import { BaseCard } from "@/components/shared/BaseCard";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 export function AgendamentoForm() {
-  const abrir = useModalService((s) => s.abrir);
+  const {
+    idPaciente,
+    setIdPaciente,
+    data,
+    setData,
+    hora,
+    setHora,
+    idVacina,
+    setIdVacina,
+    local,
+    setLocal,
+    erro,
+    pacientes,
+    handleSubmit,
+  } = useAgendamentoForm();
 
   return (
     <BaseCard title="Novo agendamento" className="h-full">
       <div className="flex flex-col gap-7 h-full">
-        <div className="flex flex-col gap-[6px]">
+        <div className="flex flex-col gap-[4px]">
+          <Label className="text-[13px] text-[#777]">Paciente</Label>
+          <Select value={idPaciente} onValueChange={setIdPaciente}>
+            <SelectTrigger className="!h-13 w-full pl-3 text-[13px] text-[#575E55] rounded-md">
+              <SelectValue placeholder="Selecionar paciente..." />
+            </SelectTrigger>
+            <SelectContent position="popper">
+              {pacientes.map((p) => (
+                <SelectItem key={p.idPaciente} value={String(p.idPaciente)}>
+                  {p.nome}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </div>
+
+        <div className="grid grid-cols-2 gap-[10px]">
           <div className="flex flex-col gap-[4px]">
-            <Label htmlFor="paciente" className="text-[13px] text-[#777]">
-              Paciente
-            </Label>
+            <Label className="text-[13px] text-[#777]">Data</Label>
             <Input
-              id="paciente"
-              type="text"
-              placeholder="Buscar paciente..."
+              type="date"
               className="h-13"
+              value={data}
+              onChange={(e) => setData(e.target.value)}
+            />
+          </div>
+          <div className="flex flex-col gap-[4px]">
+            <Label className="text-[13px] text-[#777]">Horário</Label>
+            <Input
+              type="time"
+              className="h-13"
+              value={hora}
+              onChange={(e) => setHora(e.target.value)}
             />
           </div>
         </div>
-        <div className="grid grid-cols-2 gap-[10px]">
-          <div className="flex flex-col gap-[4px] h-full">
-            <Label htmlFor="data" className="text-[13px] text-[#777]">
-              Data
-            </Label>
-            <Input id="data" type="date" className="h-13" />
-          </div>
-          <div className="flex flex-col gap-[4px] h-full">
-            <Label htmlFor="horario" className="text-[13px] text-[#777]">
-              Horário
-            </Label>
-            <Input id="horario" type="time" className="h-13" />
-          </div>
-        </div>
+
         <div className="flex flex-col gap-[4px]">
-          <Label htmlFor="vacina" className="text-[13px] text-[#777]">
-            Vacina
-          </Label>
-          <Select>
+          <Label className="text-[13px] text-[#777]">Vacina</Label>
+          <Select value={idVacina} onValueChange={setIdVacina}>
             <SelectTrigger className="!h-13 w-full pl-3 text-[13px] text-[#575E55] rounded-md">
               <SelectValue placeholder="Selecione a vacina" />
             </SelectTrigger>
@@ -59,28 +75,27 @@ export function AgendamentoForm() {
             </SelectContent>
           </Select>
         </div>
-        <div className="flex flex-col gap-[4px] ">
-          <Label htmlFor="local" className="text-[13px] text-[#777]">
-            Local de vacinação
-          </Label>
+
+        <div className="flex flex-col gap-[4px]">
+          <Label className="text-[13px] text-[#777]">Local de vacinação</Label>
           <Input
-            id="local"
             type="text"
             placeholder="Ex: UBS Centro"
             className="h-13"
+            value={local}
+            onChange={(e) => setLocal(e.target.value)}
           />
         </div>
-        <Button
-          className="w-full  cursor-pointer h-13 bg-[#575E55] hover:bg-[#474e45] text-white text-[14px] mt-auto"
-          onClick={() =>
-            abrir(
-              "Agendamento realizado!",
-              "O paciente foi agendado com sucesso.",
-            )
-          }
-        >
-          Agendar
-        </Button>
+
+        <div className="mt-auto">
+          {erro && <p className="text-[12px] text-red-500 mb-2">{erro}</p>}
+          <Button
+            className="w-full h-13 bg-[#575E55] hover:bg-[#474e45] text-white text-[14px] cursor-pointer"
+            onClick={handleSubmit}
+          >
+            Agendar
+          </Button>
+        </div>
       </div>
     </BaseCard>
   );
