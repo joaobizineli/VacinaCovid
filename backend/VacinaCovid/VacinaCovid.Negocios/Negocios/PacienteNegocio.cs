@@ -16,7 +16,7 @@ namespace VacinaCovid.Negocios.Negocios
             _pacienteRepositorio = pacienteRepositorio;
         }
 
-        public async Task<List<PacienteDTO>> InserirPaciente(string nome, DateTime dataNascimento)
+        public async Task<PacienteDTO> InserirPaciente(string nome, DateTime dataNascimento)
         {
             if (string.IsNullOrWhiteSpace(nome) || dataNascimento == default)
                 throw new BusinessException(BusinessMessages.NomeOuDataNascimentoObrigatorios);
@@ -24,7 +24,7 @@ namespace VacinaCovid.Negocios.Negocios
             var paciente = new Paciente { Nome = nome, DataNascimento = dataNascimento };
             await _pacienteRepositorio.Inserir(paciente);
 
-            return await ListarPacientes();
+            return await ObterPaciente(paciente.Id);
         }
 
         public async Task<List<PacienteDTO>> ListarPacientes()
@@ -51,7 +51,7 @@ namespace VacinaCovid.Negocios.Negocios
             };
         }
 
-        public async Task AtualizarPaciente(int id, string nome, DateTime dataNascimento)
+        public async Task<PacienteDTO> AtualizarPaciente(int id, string nome, DateTime dataNascimento)
         {
             var paciente = await ObterEValidar(id);
 
@@ -59,6 +59,8 @@ namespace VacinaCovid.Negocios.Negocios
             paciente.DataNascimento = dataNascimento;
 
             await _pacienteRepositorio.Atualizar(paciente);
+
+            return await ObterPaciente(id);
         }
 
         public async Task RemoverPaciente(int id)

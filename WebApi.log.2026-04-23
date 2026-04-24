@@ -1,0 +1,151 @@
+2026-04-23 18:20:08,251|[INFO ]|[1]|Iniciando a API
+2026-04-23 18:20:11,049|[INFO ]|[13]|Serviço exevutado com sucesso: GET /swagger 0ms
+2026-04-23 21:43:50,256|[INFO ]|[1]|Iniciando a API
+2026-04-23 22:08:02,677|[INFO ]|[1]|Iniciando a API
+2026-04-23 22:08:05,345|[INFO ]|[13]|Serviço exevutado com sucesso: GET /swagger 0ms
+2026-04-23 22:09:10,275|[INFO ]|[18]|Serviço exevutado com sucesso: GET /swagger 0ms
+2026-04-23 22:11:33,347|[INFO ]|[27]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 2285ms
+2026-04-23 22:11:33,398|[INFO ]|[28]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 47ms
+2026-04-23 22:11:41,194|[INFO ]|[23]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 19ms
+2026-04-23 22:11:41,204|[INFO ]|[28]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 8ms
+2026-04-23 22:11:43,417|[INFO ]|[28]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 8ms
+2026-04-23 22:11:43,427|[INFO ]|[27]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 8ms
+2026-04-23 22:12:43,071|[INFO ]|[28]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 12ms
+2026-04-23 22:12:43,092|[INFO ]|[31]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 19ms
+2026-04-23 22:12:46,574|[INFO ]|[28]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 9ms
+2026-04-23 22:12:46,584|[INFO ]|[33]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 8ms
+2026-04-23 22:13:19,492|[INFO ]|[32]|Serviço exevutado com sucesso: POST /api/VacinaPacientes/AgendarVacina 44ms
+2026-04-23 22:14:49,963|[INFO ]|[35]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 11ms
+2026-04-23 22:14:49,973|[INFO ]|[33]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 7ms
+2026-04-23 22:14:51,860|[INFO ]|[35]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 22ms
+2026-04-23 22:14:51,867|[INFO ]|[34]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 5ms
+2026-04-23 22:15:01,513|[ERROR]|[35]|Erro no serviço /api/Pacientes/InserirPaciente / Mensagens: An error occurred while saving the entity changes. See the inner exception for details. [333]
+2026-04-23 22:15:32,272|[INFO ]|[35]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 14ms
+2026-04-23 22:15:32,281|[INFO ]|[35]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 7ms
+2026-04-23 22:15:48,804|[ERROR]|[34]|Erro no serviço /api/Pacientes/InserirPaciente / Mensagens: An error occurred while saving the entity changes. See the inner exception for details. [115]
+2026-04-23 22:16:42,501|[INFO ]|[35]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 12ms
+2026-04-23 22:16:42,523|[INFO ]|[38]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 19ms
+2026-04-23 22:16:49,303|[ERROR]|[38]|Erro no serviço /api/Pacientes/InserirPaciente / Mensagens: An error occurred while saving the entity changes. See the inner exception for details. [121]
+2026-04-23 22:18:59,325|[INFO ]|[26]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 16ms
+2026-04-23 22:18:59,341|[INFO ]|[41]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 13ms
+2026-04-23 22:19:06,981|[ERROR]|[41]|Erro no serviço /api/Pacientes/InserirPaciente / Mensagens: An error occurred while saving the entity changes. See the inner exception for details. [107]
+2026-04-23 22:19:17,206|[ERROR]|[26]|Erro no serviço /api/Pacientes/InserirPaciente / Mensagens: An error occurred while saving the entity changes. See the inner exception for details. [93]
+2026-04-23 22:19:37,925|[ERROR]|[42]|Erro no serviço /api/Pacientes/InserirPaciente / Mensagens: An error occurred while saving the entity changes. See the inner exception for details. [101]
+2026-04-23 22:20:04,919|[INFO ]|[43]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 13ms
+2026-04-23 22:20:04,938|[INFO ]|[44]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 15ms
+2026-04-23 22:20:04,953|[INFO ]|[44]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 23ms
+2026-04-23 22:20:04,964|[INFO ]|[26]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 8ms
+2026-04-23 22:20:07,783|[INFO ]|[41]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 8ms
+2026-04-23 22:20:07,794|[INFO ]|[43]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 8ms
+2026-04-23 22:20:16,627|[ERROR]|[26]|Erro no serviço /api/Pacientes/InserirPaciente / Mensagens: An error occurred while saving the entity changes. See the inner exception for details. [109]
+2026-04-23 22:20:37,452|[INFO ]|[41]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 6ms
+2026-04-23 22:20:37,468|[INFO ]|[46]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 14ms
+2026-04-23 22:21:01,729|[INFO ]|[46]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 6ms
+2026-04-23 22:21:01,745|[INFO ]|[47]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 13ms
+2026-04-23 22:21:06,267|[ERROR]|[46]|Erro no serviço /api/Pacientes/InserirPaciente / Mensagens: An error occurred while saving the entity changes. See the inner exception for details. [93]
+2026-04-23 22:23:13,350|[INFO ]|[53]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 17ms
+2026-04-23 22:23:13,365|[INFO ]|[55]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 13ms
+2026-04-23 22:23:13,377|[INFO ]|[53]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 19ms
+2026-04-23 22:23:13,388|[INFO ]|[55]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 8ms
+2026-04-23 22:23:18,530|[ERROR]|[57]|Erro no serviço /api/Pacientes/InserirPaciente / Mensagens: An error occurred while saving the entity changes. See the inner exception for details. [99]
+2026-04-23 22:24:29,166|[INFO ]|[60]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 20ms
+2026-04-23 22:24:29,188|[INFO ]|[59]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 20ms
+2026-04-23 22:24:29,227|[INFO ]|[61]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 53ms
+2026-04-23 22:24:29,237|[INFO ]|[58]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 6ms
+2026-04-23 22:24:33,983|[ERROR]|[58]|Erro no serviço /api/Pacientes/InserirPaciente / Mensagens: An error occurred while saving the entity changes. See the inner exception for details. [94]
+2026-04-23 22:26:09,170|[INFO ]|[62]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 13ms
+2026-04-23 22:26:09,184|[INFO ]|[56]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 9ms
+2026-04-23 22:26:13,493|[ERROR]|[56]|Erro no serviço /api/Pacientes/InserirPaciente / Mensagens: An error occurred while saving the entity changes. See the inner exception for details. [93]
+2026-04-23 22:28:16,209|[INFO ]|[1]|Iniciando a API
+2026-04-23 22:28:17,922|[INFO ]|[15]|Serviço exevutado com sucesso: GET /swagger 0ms
+2026-04-23 22:28:21,150|[INFO ]|[15]|Serviço exevutado com sucesso: GET /swagge 0ms
+2026-04-23 22:28:38,648|[INFO ]|[15]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 837ms
+2026-04-23 22:28:38,691|[INFO ]|[15]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 39ms
+2026-04-23 22:28:40,217|[INFO ]|[16]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 31ms
+2026-04-23 22:28:40,226|[INFO ]|[10]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 7ms
+2026-04-23 22:28:40,607|[INFO ]|[16]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 10ms
+2026-04-23 22:28:40,617|[INFO ]|[16]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 8ms
+2026-04-23 22:28:41,072|[INFO ]|[16]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 8ms
+2026-04-23 22:28:41,081|[INFO ]|[15]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 6ms
+2026-04-23 22:28:47,379|[ERROR]|[16]|Erro no serviço /api/Pacientes/InserirPaciente / Mensagens: An error occurred while saving the entity changes. See the inner exception for details. [296]
+2026-04-23 22:30:18,908|[INFO ]|[1]|Iniciando a API
+2026-04-23 22:30:20,411|[INFO ]|[15]|Serviço exevutado com sucesso: GET /swagger 0ms
+2026-04-23 22:30:26,012|[INFO ]|[15]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 847ms
+2026-04-23 22:30:26,061|[INFO ]|[18]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 44ms
+2026-04-23 22:30:26,808|[INFO ]|[18]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 29ms
+2026-04-23 22:30:26,818|[INFO ]|[15]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 7ms
+2026-04-23 22:30:32,901|[ERROR]|[18]|Erro no serviço /api/Pacientes/InserirPaciente / Mensagens: An error occurred while saving the entity changes. See the inner exception for details. [270]
+2026-04-23 22:32:49,309|[INFO ]|[1]|Iniciando a API
+2026-04-23 22:32:51,005|[INFO ]|[9]|Serviço exevutado com sucesso: GET /swagger 0ms
+2026-04-23 22:33:04,417|[INFO ]|[1]|Iniciando a API
+2026-04-23 22:33:05,879|[INFO ]|[8]|Serviço exevutado com sucesso: GET /swagger 0ms
+2026-04-23 22:33:10,992|[INFO ]|[15]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 855ms
+2026-04-23 22:33:11,039|[INFO ]|[6]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 41ms
+2026-04-23 22:33:12,042|[INFO ]|[18]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 30ms
+2026-04-23 22:33:12,051|[INFO ]|[13]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 7ms
+2026-04-23 22:33:16,847|[ERROR]|[18]|Erro no serviço /api/Pacientes/InserirPaciente / Mensagens: An error occurred while saving the entity changes. See the inner exception for details. [275]
+2026-04-23 22:34:28,229|[INFO ]|[1]|Iniciando a API
+2026-04-23 22:34:30,325|[INFO ]|[13]|Serviço exevutado com sucesso: GET /swagger 0ms
+2026-04-23 22:37:05,954|[INFO ]|[1]|Iniciando a API
+2026-04-23 22:37:21,438|[INFO ]|[1]|Iniciando a API
+2026-04-23 22:37:23,139|[INFO ]|[13]|Serviço exevutado com sucesso: GET /swagger 0ms
+2026-04-23 22:37:28,042|[INFO ]|[18]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 989ms
+2026-04-23 22:37:28,089|[INFO ]|[9]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 42ms
+2026-04-23 22:37:28,567|[INFO ]|[14]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 34ms
+2026-04-23 22:37:28,577|[INFO ]|[14]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 8ms
+2026-04-23 22:37:33,572|[ERROR]|[13]|Erro no serviço /api/Pacientes/InserirPaciente / Mensagens: An error occurred while saving the entity changes. See the inner exception for details. [269]
+2026-04-23 22:37:40,887|[INFO ]|[8]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 9ms
+2026-04-23 22:37:40,896|[INFO ]|[10]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 6ms
+2026-04-23 22:37:42,090|[INFO ]|[18]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 8ms
+2026-04-23 22:37:42,100|[INFO ]|[18]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 8ms
+2026-04-23 22:37:48,232|[ERROR]|[18]|Erro no serviço /api/Pacientes/InserirPaciente / Mensagens: An error occurred while saving the entity changes. See the inner exception for details. [108]
+2026-04-23 22:38:58,468|[INFO ]|[1]|Iniciando a API
+2026-04-23 22:39:00,024|[INFO ]|[16]|Serviço exevutado com sucesso: GET /swagger 0ms
+2026-04-23 22:39:29,277|[INFO ]|[20]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 841ms
+2026-04-23 22:39:29,324|[INFO ]|[20]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 42ms
+2026-04-23 22:39:29,760|[INFO ]|[22]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 28ms
+2026-04-23 22:39:29,770|[INFO ]|[20]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 7ms
+2026-04-23 22:39:33,803|[ERROR]|[22]|Erro no serviço /api/Pacientes/InserirPaciente / Mensagens: An error occurred while saving the entity changes. See the inner exception for details. [263]
+2026-04-23 22:40:59,330|[INFO ]|[1]|Iniciando a API
+2026-04-23 22:41:00,763|[INFO ]|[15]|Serviço exevutado com sucesso: GET /swagger 0ms
+2026-04-23 22:41:04,025|[INFO ]|[13]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 820ms
+2026-04-23 22:41:04,071|[INFO ]|[16]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 39ms
+2026-04-23 22:41:04,125|[INFO ]|[15]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 29ms
+2026-04-23 22:41:04,135|[INFO ]|[13]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 6ms
+2026-04-23 22:41:08,520|[INFO ]|[15]|Serviço exevutado com sucesso: POST /api/Pacientes/InserirPaciente 144ms
+2026-04-23 22:45:08,683|[INFO ]|[15]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 14ms
+2026-04-23 22:45:08,721|[INFO ]|[20]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 31ms
+2026-04-23 22:52:57,956|[INFO ]|[1]|Iniciando a API
+2026-04-23 22:52:59,809|[INFO ]|[12]|Serviço exevutado com sucesso: GET /swagger 0ms
+2026-04-23 22:53:06,742|[INFO ]|[17]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 857ms
+2026-04-23 22:53:06,788|[INFO ]|[17]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 41ms
+2026-04-23 22:53:07,229|[INFO ]|[17]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 31ms
+2026-04-23 22:53:07,239|[INFO ]|[12]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 7ms
+2026-04-23 22:53:14,108|[INFO ]|[17]|Serviço exevutado com sucesso: POST /api/Pacientes/InserirPaciente 142ms
+2026-04-23 22:53:17,443|[INFO ]|[16]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 7ms
+2026-04-23 22:53:17,451|[INFO ]|[12]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 6ms
+2026-04-23 22:53:36,709|[INFO ]|[17]|Serviço exevutado com sucesso: POST /api/VacinaPacientes/AgendarVacina 26ms
+2026-04-23 22:58:10,443|[INFO ]|[17]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 11ms
+2026-04-23 22:58:10,455|[INFO ]|[22]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 6ms
+2026-04-23 22:58:29,714|[INFO ]|[22]|Serviço exevutado com sucesso: POST /api/VacinaPacientes/AgendarVacina 1ms
+2026-04-23 23:00:00,092|[INFO ]|[3]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 10ms
+2026-04-23 23:00:00,106|[INFO ]|[24]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 7ms
+2026-04-23 23:00:05,859|[INFO ]|[22]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 9ms
+2026-04-23 23:00:05,874|[INFO ]|[26]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 12ms
+2026-04-23 23:00:08,577|[INFO ]|[25]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 6ms
+2026-04-23 23:00:08,584|[INFO ]|[25]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 5ms
+2026-04-23 23:00:24,691|[INFO ]|[26]|Serviço exevutado com sucesso: POST /api/VacinaPacientes/AgendarVacina 2ms
+2026-04-23 23:01:43,270|[INFO ]|[25]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 10ms
+2026-04-23 23:01:43,282|[INFO ]|[28]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 8ms
+2026-04-23 23:01:44,723|[INFO ]|[28]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 7ms
+2026-04-23 23:01:44,731|[INFO ]|[25]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 6ms
+2026-04-23 23:01:45,811|[INFO ]|[28]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 5ms
+2026-04-23 23:01:45,821|[INFO ]|[23]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 8ms
+2026-04-23 23:02:01,996|[INFO ]|[26]|Serviço exevutado com sucesso: POST /api/VacinaPacientes/AgendarVacina 1ms
+2026-04-23 23:04:17,533|[INFO ]|[31]|Serviço exevutado com sucesso: POST /api/VacinaPacientes/AgendarVacina 188ms
+2026-04-23 23:04:21,075|[INFO ]|[27]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 7ms
+2026-04-23 23:04:21,084|[INFO ]|[27]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 7ms
+2026-04-23 23:04:22,234|[INFO ]|[29]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 6ms
+2026-04-23 23:04:22,241|[INFO ]|[31]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 5ms
+2026-04-23 23:04:30,452|[INFO ]|[27]|Serviço exevutado com sucesso: PUT /api/VacinaPacientes/MarcarComoRealizado 31ms
+2026-04-23 23:04:30,459|[INFO ]|[28]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 5ms

@@ -45,16 +45,10 @@ namespace VacinaCovid.Repositorio.Map
                 .HasColumnName("dsc_local")
                 .HasMaxLength(255);
 
-            builder.Property(vp => vp.Observacoes)
-                .HasColumnName("dsc_observacoes")
-                .HasMaxLength(500);
-
             builder.Property(vp => vp.DataCriacao)
                 .HasColumnName("dat_criacao")
+                .HasColumnType("datetime")
                 .IsRequired();
-
-            builder.Property(vp => vp.DataAtualizacao)
-                .HasColumnName("dat_atualizacao");
 
             builder.HasOne<Paciente>()
                 .WithMany()
