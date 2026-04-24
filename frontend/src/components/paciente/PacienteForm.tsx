@@ -11,6 +11,7 @@ export function PacienteForm() {
     dataNascimento,
     setDataNascimento,
     erro,
+    loading,
     handleSubmit,
   } = usePacienteForm();
 
@@ -45,10 +46,11 @@ export function PacienteForm() {
         <div className="mt-auto">
           {erro && <p className="text-[12px] text-red-500 mb-2">{erro}</p>}
           <Button
-            className="w-full h-16 bg-[#575E55] hover:bg-[#474e45] text-white text-[14px] cursor-pointer"
+            className="w-full h-16 bg-[#575E55] hover:bg-[#474e45] text-white text-[14px] cursor-pointer disabled:opacity-50"
             onClick={handleSubmit}
+            disabled={loading}
           >
-            Cadastrar paciente
+            {loading ? "Cadastrando..." : "Cadastrar paciente"}
           </Button>
         </div>
       </div>
