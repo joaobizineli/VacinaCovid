@@ -1,7 +1,9 @@
 import { Link } from "@tanstack/react-router";
 import { Badge } from "@/components/ui/badge";
+import { useAgendamentoStore } from "@/store/agendamentoStore";
 
 export function Navbar() {
+  const total = useAgendamentoStore((s) => s.agendamentos.length);
   return (
     <nav className="bg-[#575E55] px-6 py-[22px] flex items-center justify-between sticky top-0 z-50">
       <div className="flex items-center gap-2">
@@ -31,9 +33,9 @@ export function Navbar() {
           Pacientes
         </Link>
         <button className="bg-transparent border-none cursor-pointer text-[15px] text-white/65 hover:text-white px-[18px] py-[8px] rounded-md flex items-center gap-2 transition-colors">
-          Notificações
+          Agendamentos
           <Badge className="bg-[#E8A249] hover:bg-[#E8A249] text-white text-[12px] px-[8px] py-[2px] rounded-full pointer-events-none">
-            5
+            {total}
           </Badge>
         </button>
       </div>
