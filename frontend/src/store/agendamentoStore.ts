@@ -1,8 +1,11 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-import type { Agendamento, CriarAgendamentoForm, StatusAgendamento } from "@/types";
+import type {
+  Agendamento,
+  CriarAgendamentoForm,
+  StatusAgendamento,
+} from "@/types";
 import { hoje, horaParaBackend } from "@/lib/utils/date";
-
 
 // Regras de negócio — definidas como constantes pra ficarem explícitas
 const LIMITE_POR_DIA = 20;
@@ -10,20 +13,22 @@ const LIMITE_POR_HORARIO = 2;
 
 interface AgendamentoStore {
   agendamentos: Agendamento[];
-  diaAtual: string; 
+  diaAtual: string;
 
   diaAnterior: () => void;
   proximoDia: () => void;
   selecionarDia: (data: string) => void;
 
-  adicionarAgendamento: (form: CriarAgendamentoForm) => { sucesso: boolean; erro?: string };
+  adicionarAgendamento: (form: CriarAgendamentoForm) => {
+    sucesso: boolean;
+    erro?: string;
+  };
   marcarRealizado: (id: number, observacoes?: string) => void;
   cancelarAgendamento: (id: number) => void;
 
   agendamentosDoDia: (data: string) => Agendamento[];
   totalDoDia: (data: string) => number;
   totalPorHorario: (data: string, hora: string) => number;
-  
 }
 
 export const useAgendamentoStore = create<AgendamentoStore>()(
@@ -91,37 +96,55 @@ export const useAgendamentoStore = create<AgendamentoStore>()(
 
       diaAnterior: () =>
         set((state) => ({
-          diaAtual: new Date(
-            new Date(state.diaAtual).getTime() - 86400000
-          )
+          diaAtual: new Date(new Date(state.diaAtual).getTime() - 86400000)
             .toISOString()
             .slice(0, 10),
         })),
 
       proximoDia: () =>
         set((state) => ({
-          diaAtual: new Date(
-            new Date(state.diaAtual).getTime() + 86400000
-          )
+          diaAtual: new Date(new Date(state.diaAtual).getTime() + 86400000)
             .toISOString()
             .slice(0, 10),
         })),
 
       selecionarDia: (data) => set({ diaAtual: data }),
 
-
-
       adicionarAgendamento: (form) => {
         const state = get();
         const data = form.dataVacinacao;
-        const hora = horaParaBackend(form.horaVacinacao); 
+        const hora = horaParaBackend(form.horaVacinacao);
 
         if (state.totalDoDia(data) >= LIMITE_POR_DIA) {
-          return { sucesso: false, erro: "Limite de 20 agendamentos por dia atingido." };
+          return {
+            sucesso: false,
+            erro: "Limite de 20 agendamentos por dia atingido.",
+          };
         }
 
         if (state.totalPorHorario(data, hora) >= LIMITE_POR_HORARIO) {
-          return { sucesso: false, erro: "Limite de 2 agendamentos por horário atingido." };
+          return {
+            sucesso: false,
+            erro: "Limite de 2 agendamentos por horário atingido.",
+          };
+        }
+        const horaEmMinutos = (h: string) => {
+          const [hh, mm] = h.split(":").map(Number);
+          return hh * 60 + mm;
+        };
+
+        const novoHorario = horaEmMinutos(hora);
+        const conflito = state.agendamentosDoDia(data).some((a) => {
+          if (a.status === "Cancelado") return false;
+          const diff = Math.abs(horaEmMinutos(a.horaVacinacao) - novoHorario);
+          return diff > 0 && diff < 60;
+        });
+
+        if (conflito) {
+          return {
+            sucesso: false,
+            erro: "Intervalo mínimo de 1 hora entre agendamentos.",
+          };
         }
 
         set((state) => ({
@@ -149,7 +172,7 @@ export const useAgendamentoStore = create<AgendamentoStore>()(
           agendamentos: state.agendamentos.map((a) =>
             a.idVacinaPaciente === id
               ? { ...a, status: "Realizado" as StatusAgendamento, observacoes }
-              : a
+              : a,
           ),
         })),
 
@@ -158,19 +181,14 @@ export const useAgendamentoStore = create<AgendamentoStore>()(
           agendamentos: state.agendamentos.map((a) =>
             a.idVacinaPaciente === id
               ? { ...a, status: "Cancelado" as StatusAgendamento }
-              : a
+              : a,
           ),
         })),
 
-
       agendamentosDoDia: (data) =>
-        get().agendamentos.filter(
-          (a) => a.dataVacinacao.slice(0, 10) === data
-        ),
-
+        get().agendamentos.filter((a) => a.dataVacinacao.slice(0, 10) === data),
 
       totalDoDia: (data) => get().agendamentosDoDia(data).length,
-
 
       totalPorHorario: (data, hora) =>
         get()
@@ -178,6 +196,6 @@ export const useAgendamentoStore = create<AgendamentoStore>()(
           .filter((a) => a.horaVacinacao === hora && a.status === "Agendado")
           .length,
     }),
-    { name: "agendamentos" } 
-  )
+    { name: "agendamentos" },
+  ),
 );
