@@ -12,6 +12,6 @@ namespace VacinaCovid.Entidade.Model
         public int IdVacina { get; set; }
         public DateTime DataVacinacao { get; set; }
         public TimeSpan HoraVacinacao { get; set; }
-        public string LocalVacinacao { get; set; }
+        public string? LocalVacinacao { get; set; }
     }
 }

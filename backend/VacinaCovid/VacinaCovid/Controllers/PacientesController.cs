@@ -18,7 +18,7 @@ namespace VacinaCovid.Controllers
         }
 
         [HttpPost("InserirPaciente")]
-        public async Task<List<PacienteDTO>> InserirPaciente(string nome, DateTime dataNascimento)
+        public async Task<PacienteDTO> InserirPaciente(string nome, DateTime dataNascimento)
         {
             _logger.LogInformation($"Inserindo paciente: {nome}");
             return await _pacienteNegocio.InserirPaciente(nome, dataNascimento);
@@ -39,19 +39,17 @@ namespace VacinaCovid.Controllers
         }
 
         [HttpPut("AlterarPaciente")]
-        public async Task<List<PacienteDTO>> AlterarPaciente(int id, string nome, DateTime dataNascimento)
+        public async Task<PacienteDTO> AlterarPaciente(int id, string nome, DateTime dataNascimento)
         {
             _logger.LogInformation($"Alterando paciente ID: {id}");
-            await _pacienteNegocio.AtualizarPaciente(id, nome, dataNascimento);
-            return await _pacienteNegocio.ListarPacientes();
+            return await _pacienteNegocio.AtualizarPaciente(id, nome, dataNascimento);
         }
 
         [HttpDelete("RemoverPaciente")]
-        public async Task<List<PacienteDTO>> RemoverPaciente(int id)
+        public async Task RemoverPaciente(int id)
         {
             _logger.LogInformation($"Removendo paciente ID: {id}");
             await _pacienteNegocio.RemoverPaciente(id);
-            return await _pacienteNegocio.ListarPacientes();
         }
     }
 }

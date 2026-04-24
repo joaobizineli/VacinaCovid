@@ -4,7 +4,7 @@ namespace VacinaCovid.Negocios.Interface.INegocios
 {
     public interface IVacinaPacienteNegocio
     {
-        Task<List<VacinaPacienteDTO>> AgendarVacina(int idPaciente, int idVacina, DateTime data, TimeSpan hora, string local);
+        Task<VacinaPacienteDTO> AgendarVacina(int idPaciente, int idVacina, DateTime data, TimeSpan hora, string local);
 
         Task<List<VacinaPacienteDTO>> ListarAgendamentos();
         Task<List<VacinaPacienteDTO>> ListarAgendamentosPaciente(int idPaciente);
@@ -12,7 +12,7 @@ namespace VacinaCovid.Negocios.Interface.INegocios
 
         Task<VacinaPacienteDTO> ObterAgendamento(int id);
 
-        Task MarcarComoRealizado(int id, string observacoes = "");
+        Task MarcarComoRealizado(int id);
         Task CancelarAgendamento(int id);
         Task RemoverAgendamento(int id);
     }

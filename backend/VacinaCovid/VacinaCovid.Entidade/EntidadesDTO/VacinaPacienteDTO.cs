@@ -11,8 +11,6 @@
         public string Status { get; set; }
 
         public string LocalVacinacao { get; set; }
-        public string Observacoes { get; set; }
 
-        public DateTime DataCriacao { get; set; }
     }
 }

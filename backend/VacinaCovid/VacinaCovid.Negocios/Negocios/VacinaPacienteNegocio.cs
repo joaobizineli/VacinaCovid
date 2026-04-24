@@ -21,7 +21,7 @@ namespace VacinaCovid.Negocios.Negocios
             _pacienteRepositorio = pacienteRepositorio;
         }
 
-        public async Task<List<VacinaPacienteDTO>> AgendarVacina(
+        public async Task<VacinaPacienteDTO> AgendarVacina(
             int idPaciente, int idVacina, DateTime data, TimeSpan hora, string local)
         {
             var paciente = await _pacienteRepositorio.ObterPorId(idPaciente);
@@ -54,12 +54,11 @@ namespace VacinaCovid.Negocios.Negocios
                 HoraVacinacao = hora,
                 Status = StatusEnum.Agendado,
                 LocalVacinacao = local,
-                DataCriacao = DateTime.Now
             };
 
             await _vacinaPacienteRepositorio.Inserir(novoAgendamento);
 
-            return await ListarAgendamentos();
+            return await ObterAgendamento(novoAgendamento.Id);
         }
 
         public async Task<List<VacinaPacienteDTO>> ListarAgendamentos()
@@ -98,7 +97,7 @@ namespace VacinaCovid.Negocios.Negocios
             return ConverterParaDTO(agendamento);
         }
 
-        public async Task MarcarComoRealizado(int id, string observacoes = "")
+        public async Task MarcarComoRealizado(int id)
         {
             var agendamento = await _vacinaPacienteRepositorio.ObterPorId(id);
             if (agendamento == null)
@@ -108,7 +107,6 @@ namespace VacinaCovid.Negocios.Negocios
                 throw new BusinessException(BusinessMessages.AgendamentoNaoAgendado);
 
             agendamento.Status = StatusEnum.Realizado;
-            agendamento.Observacoes = observacoes;
 
             await _vacinaPacienteRepositorio.Atualizar(agendamento);
         }
@@ -147,8 +145,6 @@ namespace VacinaCovid.Negocios.Negocios
             HoraVacinacao = v.HoraVacinacao,
             Status = v.Status.ToString(),
             LocalVacinacao = v.LocalVacinacao,
-            Observacoes = v.Observacoes,
-            DataCriacao = v.DataCriacao
         };
     }
 }

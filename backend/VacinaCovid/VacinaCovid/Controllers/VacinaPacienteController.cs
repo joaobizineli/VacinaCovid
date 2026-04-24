@@ -22,7 +22,7 @@ namespace VacinaCovid.Controllers
         }
 
         [HttpPost("AgendarVacina")]
-        public async Task<List<VacinaPacienteDTO>> AgendarVacina([FromBody] VacinaPacienteModel model)
+        public async Task<VacinaPacienteDTO> AgendarVacina([FromBody] VacinaPacienteModel model)
         {
             _logger.LogInformation($"Agendando vacina para paciente ID: {model.IdPaciente}");
             VacinaCovidValidador.Validar(model);
@@ -63,10 +63,10 @@ namespace VacinaCovid.Controllers
         }
 
         [HttpPut("MarcarComoRealizado")]
-        public async Task MarcarComoRealizado(int id, string observacoes = "")
+        public async Task MarcarComoRealizado(int id)
         {
             _logger.LogInformation($"Marcando agendamento ID: {id} como realizado.");
-            await _vacinaPacienteNegocio.MarcarComoRealizado(id, observacoes);
+            await _vacinaPacienteNegocio.MarcarComoRealizado(id);
         }
 
         [HttpPut("CancelarAgendamento")]

@@ -4,7 +4,7 @@ using Microsoft.OpenApi.Any;
 using Microsoft.OpenApi.Models;
 using VacinaCovid.Configuration;
 
-namespace VacinaCovid.WebApi
+namespace VacinaCovid
 {
     public class Startup
     {
