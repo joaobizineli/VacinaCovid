@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { usePacienteForm } from "@/hooks/usePacienteForm";
+import ReactDatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 export function PacienteForm() {
   const {
@@ -35,12 +37,20 @@ export function PacienteForm() {
           <Label htmlFor="nascimento" className="text-[13px] text-[#777]">
             Data de nascimento
           </Label>
-          <Input
-            id="nascimento"
-            type="date"
-            className="h-16"
-            value={dataNascimento}
-            onChange={(e) => setDataNascimento(e.target.value)}
+          <ReactDatePicker
+            selected={
+              dataNascimento ? new Date(`${dataNascimento}T12:00:00`) : null
+            }
+            onChange={(date: Date | null) => {
+              if (date) setDataNascimento(date.toISOString().slice(0, 10));
+            }}
+            dateFormat="dd/MM/yyyy"
+            placeholderText="Selecionar data de nascimento"
+            showMonthDropdown
+            showYearDropdown
+            dropdownMode="select"
+            className="w-full h-16 px-3 text-[13px] text-[#575E55] border border-[#e5e8e3] rounded-md outline-none"
+            wrapperClassName="w-full"
           />
         </div>
         <div className="mt-auto">
