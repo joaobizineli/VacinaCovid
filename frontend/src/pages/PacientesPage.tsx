@@ -3,7 +3,7 @@ import { PacienteLista } from "@/components/paciente/PacienteLista";
 
 export function PacientesPage() {
   return (
-    <div className="p-6">
+    <div className="p-6 h-[600px]">
       <h1 className="text-[17px] font-semibold text-[#575E55] mb-1">
         Pacientes
       </h1>
