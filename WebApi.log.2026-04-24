@@ -1,0 +1,132 @@
+2026-04-24 11:51:07,174|[INFO ]|[1]|Iniciando a API
+2026-04-24 11:51:10,277|[INFO ]|[15]|Serviço exevutado com sucesso: GET /swagger 0ms
+2026-04-24 11:51:19,780|[INFO ]|[18]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 2014ms
+2026-04-24 11:51:43,630|[ERROR]|[22]|Erro no serviço /api/Pacientes/InserirPaciente / Mensagens: An error occurred while saving the entity changes. See the inner exception for details. [389]
+2026-04-24 11:51:58,779|[ERROR]|[21]|Erro no serviço /api/Pacientes/InserirPaciente / Mensagens: An error occurred while saving the entity changes. See the inner exception for details. [110]
+2026-04-24 11:52:11,712|[ERROR]|[22]|Erro no serviço /api/Pacientes/InserirPaciente / Mensagens: An error occurred while saving the entity changes. See the inner exception for details. [106]
+2026-04-24 11:52:15,343|[INFO ]|[23]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 8ms
+2026-04-24 11:53:41,819|[INFO ]|[22]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 8ms
+2026-04-24 11:53:52,351|[ERROR]|[29]|Erro no serviço /api/Pacientes/InserirPaciente / Mensagens: An error occurred while saving the entity changes. See the inner exception for details. [129]
+2026-04-24 11:54:00,764|[INFO ]|[29]|Serviço exevutado com sucesso: GET /api/Pacientes/ObterPaciente 86ms
+2026-04-24 11:54:17,600|[INFO ]|[29]|Serviço exevutado com sucesso: PUT /api/Pacientes/AlterarPaciente 29ms
+2026-04-24 11:54:20,166|[INFO ]|[29]|Serviço exevutado com sucesso: PUT /api/Pacientes/AlterarPaciente 22ms
+2026-04-24 11:54:26,037|[INFO ]|[26]|Serviço exevutado com sucesso: DELETE /api/Pacientes/RemoverPaciente 24ms
+2026-04-24 11:54:27,213|[ERROR]|[28]|Erro no serviço /api/Pacientes/RemoverPaciente / Mensagens: "{0}" não encontrado. [99]
+2026-04-24 11:54:28,547|[ERROR]|[29]|Erro no serviço /api/Pacientes/RemoverPaciente / Mensagens: "{0}" não encontrado. [88]
+2026-04-24 11:54:33,119|[ERROR]|[29]|Erro no serviço /api/Pacientes/ObterPaciente / Mensagens: "{0}" não encontrado. [87]
+2026-04-24 11:54:39,068|[INFO ]|[30]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 8ms
+2026-04-24 11:55:04,517|[ERROR]|[30]|Erro no serviço /api/VacinaPacientes/AgendarVacina / Mensagens: An error occurred while saving the entity changes. See the inner exception for details. [237]
+2026-04-24 11:55:53,628|[INFO ]|[24]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 22ms
+2026-04-24 11:55:58,827|[INFO ]|[33]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentosPaciente 23ms
+2026-04-24 11:55:59,343|[INFO ]|[24]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentosPaciente 9ms
+2026-04-24 11:56:08,483|[INFO ]|[33]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentosPorData 21ms
+2026-04-24 11:56:09,864|[INFO ]|[24]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentosPorData 9ms
+2026-04-24 11:56:22,155|[INFO ]|[30]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentosPorData 8ms
+2026-04-24 11:56:23,539|[INFO ]|[24]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentosPorData 7ms
+2026-04-24 11:56:24,084|[INFO ]|[24]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentosPorData 8ms
+2026-04-24 11:56:31,459|[INFO ]|[24]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentosPorData 8ms
+2026-04-24 11:56:47,398|[INFO ]|[33]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ObterAgendamento 14ms
+2026-04-24 11:56:48,028|[INFO ]|[33]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ObterAgendamento 6ms
+2026-04-24 11:58:08,636|[INFO ]|[1]|Iniciando a API
+2026-04-24 11:58:10,444|[INFO ]|[15]|Serviço exevutado com sucesso: GET /swagger 0ms
+2026-04-24 11:58:31,204|[ERROR]|[10]|Erro no serviço /api/Pacientes/InserirPaciente / Mensagens: An error occurred while saving the entity changes. See the inner exception for details. [1087]
+2026-04-24 11:58:35,853|[INFO ]|[17]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 172ms
+2026-04-24 11:58:40,655|[ERROR]|[17]|Erro no serviço /api/Pacientes/InserirPaciente / Mensagens: An error occurred while saving the entity changes. See the inner exception for details. [129]
+2026-04-24 11:58:50,887|[ERROR]|[17]|Erro no serviço /api/Pacientes/InserirPaciente / Mensagens: An error occurred while saving the entity changes. See the inner exception for details. [117]
+2026-04-24 12:05:02,047|[INFO ]|[20]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 26ms
+2026-04-24 12:05:06,342|[INFO ]|[15]|Serviço exevutado com sucesso: POST /api/Pacientes/InserirPaciente 32ms
+2026-04-24 12:05:11,132|[INFO ]|[21]|Serviço exevutado com sucesso: POST /api/Pacientes/InserirPaciente 12ms
+2026-04-24 12:05:27,486|[ERROR]|[23]|Erro no serviço /api/VacinaPacientes/AgendarVacina / Mensagens: Invalid column name 'dat_atualizacao'. [236]
+2026-04-24 12:13:39,661|[INFO ]|[30]|Serviço exevutado com sucesso: POST /api/Pacientes/InserirPaciente 24ms
+2026-04-24 12:13:58,008|[ERROR]|[30]|Erro no serviço /api/VacinaPacientes/AgendarVacina / Mensagens: Invalid column name 'dat_atualizacao'. [89]
+2026-04-24 12:14:01,811|[ERROR]|[30]|Erro no serviço /api/VacinaPacientes/AgendarVacina / Mensagens: Invalid column name 'dat_atualizacao'. [76]
+2026-04-24 12:14:39,182|[ERROR]|[32]|Erro no serviço /api/VacinaPacientes/AgendarVacina / Mensagens: Invalid column name 'dat_atualizacao'. [71]
+2026-04-24 12:15:26,937|[INFO ]|[1]|Iniciando a API
+2026-04-24 12:15:29,338|[INFO ]|[12]|Serviço exevutado com sucesso: GET /swagger 0ms
+2026-04-24 12:15:45,041|[ERROR]|[18]|Erro no serviço /api/VacinaPacientes/AgendarVacina / Mensagens: Invalid column name 'DataCriacao'. [1208]
+2026-04-24 12:17:11,848|[ERROR]|[23]|Erro no serviço /api/VacinaPacientes/AgendarVacina / Mensagens: Invalid column name 'DataCriacao'. [117]
+2026-04-24 12:17:30,124|[INFO ]|[1]|Iniciando a API
+2026-04-24 12:17:31,940|[INFO ]|[15]|Serviço exevutado com sucesso: GET /swagger 0ms
+2026-04-24 12:17:49,170|[INFO ]|[14]|Serviço exevutado com sucesso: POST /api/VacinaPacientes/AgendarVacina 1108ms
+2026-04-24 12:18:03,604|[ERROR]|[9]|Erro no serviço /api/VacinaPacientes/AgendarVacina / Mensagens: Deve haver intervalo de 1 hora entre agendamentos. [131]
+2026-04-24 12:18:09,459|[INFO ]|[13]|Serviço exevutado com sucesso: POST /api/VacinaPacientes/AgendarVacina 37ms
+2026-04-24 12:19:12,605|[INFO ]|[1]|Iniciando a API
+2026-04-24 12:19:13,988|[INFO ]|[9]|Serviço exevutado com sucesso: GET /swagger 0ms
+2026-04-24 12:20:20,746|[INFO ]|[1]|Iniciando a API
+2026-04-24 12:20:28,248|[INFO ]|[15]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 801ms
+2026-04-24 12:20:40,089|[INFO ]|[9]|Serviço exevutado com sucesso: POST /api/Pacientes/InserirPaciente 184ms
+2026-04-24 12:20:43,020|[INFO ]|[16]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 16ms
+2026-04-24 12:20:49,055|[INFO ]|[16]|Serviço exevutado com sucesso: GET /api/Pacientes/ObterPaciente 73ms
+2026-04-24 12:20:49,674|[INFO ]|[9]|Serviço exevutado com sucesso: GET /api/Pacientes/ObterPaciente 10ms
+2026-04-24 12:21:05,268|[INFO ]|[16]|Serviço exevutado com sucesso: PUT /api/Pacientes/AlterarPaciente 22ms
+2026-04-24 12:21:05,944|[INFO ]|[13]|Serviço exevutado com sucesso: PUT /api/Pacientes/AlterarPaciente 17ms
+2026-04-24 12:21:10,905|[INFO ]|[10]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 7ms
+2026-04-24 12:21:18,800|[INFO ]|[16]|Serviço exevutado com sucesso: DELETE /api/Pacientes/RemoverPaciente 21ms
+2026-04-24 12:21:19,515|[ERROR]|[15]|Erro no serviço /api/Pacientes/RemoverPaciente / Mensagens: "{0}" não encontrado. [102]
+2026-04-24 12:21:22,195|[ERROR]|[16]|Erro no serviço /api/Pacientes/ObterPaciente / Mensagens: "{0}" não encontrado. [84]
+2026-04-24 12:21:26,476|[INFO ]|[16]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 6ms
+2026-04-24 12:21:45,593|[INFO ]|[16]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 30ms
+2026-04-24 12:21:46,456|[INFO ]|[15]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 6ms
+2026-04-24 12:22:02,176|[INFO ]|[16]|Serviço exevutado com sucesso: POST /api/VacinaPacientes/AgendarVacina 117ms
+2026-04-24 12:22:06,861|[INFO ]|[13]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 7ms
+2026-04-24 12:22:12,559|[ERROR]|[10]|Erro no serviço /api/VacinaPacientes/AgendarVacina / Mensagens: Deve haver intervalo de 1 hora entre agendamentos. [94]
+2026-04-24 12:22:16,353|[INFO ]|[16]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 7ms
+2026-04-24 12:22:31,321|[INFO ]|[15]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentosPaciente 18ms
+2026-04-24 12:22:32,014|[INFO ]|[16]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentosPaciente 9ms
+2026-04-24 12:22:48,470|[INFO ]|[15]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentosPorData 18ms
+2026-04-24 12:22:49,066|[INFO ]|[15]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentosPorData 6ms
+2026-04-24 12:23:02,076|[ERROR]|[13]|Erro no serviço /api/VacinaPacientes/ObterAgendamento / Mensagens: Agendamento "{0}" não encontrado. [75]
+2026-04-24 12:23:02,744|[ERROR]|[15]|Erro no serviço /api/VacinaPacientes/ObterAgendamento / Mensagens: Agendamento "{0}" não encontrado. [59]
+2026-04-24 12:23:07,490|[INFO ]|[15]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ObterAgendamento 8ms
+2026-04-24 12:23:15,512|[INFO ]|[16]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ObterAgendamento 8ms
+2026-04-24 12:23:20,902|[INFO ]|[13]|Serviço exevutado com sucesso: PUT /api/VacinaPacientes/MarcarComoRealizado 23ms
+2026-04-24 12:23:21,654|[ERROR]|[13]|Erro no serviço /api/VacinaPacientes/MarcarComoRealizado / Mensagens: Apenas agendamentos com status 'Agendado' podem ser marcados como realizados. [89]
+2026-04-24 12:23:26,223|[INFO ]|[10]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ObterAgendamento 6ms
+2026-04-24 12:23:33,461|[ERROR]|[15]|Erro no serviço /api/VacinaPacientes/CancelarAgendamento / Mensagens: Não é possível cancelar agendamentos já realizados. [70]
+2026-04-24 12:23:38,581|[INFO ]|[20]|Serviço exevutado com sucesso: PUT /api/VacinaPacientes/CancelarAgendamento 18ms
+2026-04-24 12:23:43,043|[ERROR]|[20]|Erro no serviço /api/VacinaPacientes/MarcarComoRealizado / Mensagens: Apenas agendamentos com status 'Agendado' podem ser marcados como realizados. [69]
+2026-04-24 12:23:48,927|[INFO ]|[13]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ObterAgendamento 6ms
+2026-04-24 12:23:54,938|[ERROR]|[13]|Erro no serviço /api/VacinaPacientes/RemoverAgendamento / Mensagens: Não é possível deletar agendamentos já realizados. [63]
+2026-04-24 12:23:55,784|[ERROR]|[16]|Erro no serviço /api/VacinaPacientes/RemoverAgendamento / Mensagens: Não é possível deletar agendamentos já realizados. [59]
+2026-04-24 12:24:00,596|[INFO ]|[15]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ObterAgendamento 7ms
+2026-04-24 12:24:04,081|[INFO ]|[16]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ObterAgendamento 6ms
+2026-04-24 12:24:07,960|[ERROR]|[20]|Erro no serviço /api/VacinaPacientes/RemoverAgendamento / Mensagens: Não é possível deletar agendamentos já realizados. [59]
+2026-04-24 12:24:14,357|[INFO ]|[16]|Serviço exevutado com sucesso: DELETE /api/VacinaPacientes/RemoverAgendamento 19ms
+2026-04-24 12:24:17,892|[ERROR]|[20]|Erro no serviço /api/VacinaPacientes/ObterAgendamento / Mensagens: Agendamento "{0}" não encontrado. [58]
+2026-04-24 13:19:00,714|[INFO ]|[1]|Iniciando a API
+2026-04-24 13:19:13,180|[INFO ]|[14]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 1022ms
+2026-04-24 13:19:13,227|[INFO ]|[14]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 42ms
+2026-04-24 13:19:31,768|[ERROR]|[14]|Erro no serviço /api/VacinaPacientes/AgendarVacina / Mensagens: "{0}" não encontrado. [283]
+2026-04-24 13:20:52,900|[INFO ]|[21]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 12ms
+2026-04-24 13:20:52,909|[INFO ]|[23]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 7ms
+2026-04-24 13:22:24,214|[INFO ]|[23]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 40ms
+2026-04-24 13:22:48,183|[INFO ]|[26]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 12ms
+2026-04-24 13:23:29,169|[INFO ]|[28]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 11ms
+2026-04-24 13:24:08,174|[INFO ]|[30]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 11ms
+2026-04-24 13:24:08,200|[INFO ]|[31]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 37ms
+2026-04-24 13:26:00,174|[INFO ]|[29]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 9ms
+2026-04-24 13:27:25,881|[INFO ]|[36]|Serviço exevutado com sucesso: POST /api/VacinaPacientes/AgendarVacina 199ms
+2026-04-24 13:27:30,359|[INFO ]|[33]|Serviço exevutado com sucesso: PUT /api/VacinaPacientes/MarcarComoRealizado 33ms
+2026-04-24 13:27:30,367|[INFO ]|[37]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 5ms
+2026-04-24 13:27:31,722|[INFO ]|[36]|Serviço exevutado com sucesso: PUT /api/VacinaPacientes/CancelarAgendamento 12ms
+2026-04-24 13:27:31,730|[INFO ]|[34]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 5ms
+2026-04-24 13:27:32,052|[INFO ]|[36]|Serviço exevutado com sucesso: PUT /api/VacinaPacientes/CancelarAgendamento 8ms
+2026-04-24 13:27:32,060|[INFO ]|[36]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 5ms
+2026-04-24 13:27:33,240|[INFO ]|[33]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 8ms
+2026-04-24 13:27:33,249|[INFO ]|[34]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 7ms
+2026-04-24 13:27:48,659|[INFO ]|[37]|Serviço exevutado com sucesso: POST /api/Pacientes/InserirPaciente 19ms
+2026-04-24 13:27:51,326|[INFO ]|[37]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 6ms
+2026-04-24 13:27:51,333|[INFO ]|[33]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 5ms
+2026-04-24 14:23:15,086|[INFO ]|[54]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 24ms
+2026-04-24 14:23:15,098|[INFO ]|[56]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 8ms
+2026-04-24 15:39:04,716|[INFO ]|[1]|Iniciando a API
+2026-04-24 15:39:34,708|[INFO ]|[6]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 1352ms
+2026-04-24 15:39:34,785|[INFO ]|[16]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 73ms
+2026-04-24 15:39:36,984|[INFO ]|[14]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 43ms
+2026-04-24 15:39:36,995|[INFO ]|[14]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 8ms
+2026-04-24 15:39:50,703|[INFO ]|[8]|Serviço exevutado com sucesso: POST /api/Pacientes/InserirPaciente 250ms
+2026-04-24 15:39:55,331|[INFO ]|[16]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 8ms
+2026-04-24 15:39:55,339|[INFO ]|[14]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 6ms
+2026-04-24 15:40:41,966|[INFO ]|[14]|Serviço exevutado com sucesso: POST /api/VacinaPacientes/AgendarVacina 225ms
+2026-04-24 15:40:48,126|[INFO ]|[8]|Serviço exevutado com sucesso: PUT /api/VacinaPacientes/CancelarAgendamento 27ms
+2026-04-24 15:40:48,134|[INFO ]|[16]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 5ms

@@ -8,8 +8,6 @@ export interface Agendamento {
   horaVacinacao: string;
   status: StatusAgendamento;
   localVacinacao: string;
-  observacoes: string;
-  dataCriacao: string;
 }
 
 export interface CriarAgendamentoForm {

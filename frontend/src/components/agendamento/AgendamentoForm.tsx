@@ -3,7 +3,15 @@ import { BaseCard } from "@/components/shared/BaseCard";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import ReactDatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 export function AgendamentoForm() {
   const {
@@ -31,7 +39,7 @@ export function AgendamentoForm() {
             <SelectTrigger className="!h-13 w-full pl-3 text-[13px] text-[#575E55] rounded-md">
               <SelectValue placeholder="Selecionar paciente..." />
             </SelectTrigger>
-            <SelectContent position="popper">
+            <SelectContent position="popper" side="bottom" avoidCollisions={false}>
               {pacientes.map((p) => (
                 <SelectItem key={p.idPaciente} value={String(p.idPaciente)}>
                   {p.nome}
@@ -44,11 +52,19 @@ export function AgendamentoForm() {
         <div className="grid grid-cols-2 gap-[10px]">
           <div className="flex flex-col gap-[4px]">
             <Label className="text-[13px] text-[#777]">Data</Label>
-            <Input
-              type="date"
-              className="h-13"
-              value={data}
-              onChange={(e) => setData(e.target.value)}
+            <ReactDatePicker
+              selected={data ? new Date(`${data}T12:00:00`) : null}
+              onChange={(date: Date | null) => {
+                if (date) setData(date.toISOString().slice(0, 10));
+              }}
+              dateFormat="dd/MM/yyyy"
+              placeholderText="Selecionar data"
+              showMonthDropdown
+              showYearDropdown
+              dropdownMode="select"
+              minDate={new Date()}
+              className="w-full h-13 px-3 text-[13px] text-[#575E55] border border-[#e5e8e3] rounded-md outline-none"
+              wrapperClassName="w-full"
             />
           </div>
           <div className="flex flex-col gap-[4px]">
@@ -68,7 +84,7 @@ export function AgendamentoForm() {
             <SelectTrigger className="!h-13 w-full pl-3 text-[13px] text-[#575E55] rounded-md">
               <SelectValue placeholder="Selecione a vacina" />
             </SelectTrigger>
-            <SelectContent position="popper">
+            <SelectContent position="popper" side="bottom" avoidCollisions={false}>
               <SelectItem value="1">COVID-19 - Pfizer</SelectItem>
               <SelectItem value="2">COVID-19 - AstraZeneca</SelectItem>
               <SelectItem value="3">COVID-19 - Coronavac</SelectItem>

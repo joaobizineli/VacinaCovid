@@ -4,7 +4,11 @@ import { useShallow } from "zustand/react/shallow";
 export function useAgendamentosPage() {
   const diaAtual = useAgendamentoStore((s) => s.diaAtual);
   const agendamentos = useAgendamentoStore(
-    useShallow((s) => s.agendamentos.filter((a) => a.dataVacinacao.slice(0, 10) === diaAtual))
+    useShallow((s) =>
+      (Array.isArray(s.agendamentos) ? s.agendamentos : []).filter(
+        (a) => a.dataVacinacao.slice(0, 10) === diaAtual
+      )
+    )
   );
 
   return {
