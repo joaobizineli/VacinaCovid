@@ -10,6 +10,8 @@ namespace VacinaCovid.Configuration
         public static void AddFluentConfiguration(this IServiceCollection services)
         {
             services.AddValidatorsFromAssemblyContaining<VacinaPacienteValidator>();
+            services.AddValidatorsFromAssemblyContaining<PacienteValidator>();
+
             services.AddFluentValidationAutoValidation();
         }
     }

@@ -21,6 +21,9 @@ namespace VacinaCovid.Negocios.Negocios
             if (string.IsNullOrWhiteSpace(nome) || dataNascimento == default)
                 throw new BusinessException(BusinessMessages.NomeOuDataNascimentoObrigatorios);
 
+            if (dataNascimento.Date > DateTime.Today)
+                throw new BusinessException(BusinessMessages.DataInvalida);
+
             var paciente = new Paciente { Nome = nome, DataNascimento = dataNascimento };
             await _pacienteRepositorio.Inserir(paciente);
 
@@ -53,6 +56,12 @@ namespace VacinaCovid.Negocios.Negocios
 
         public async Task<PacienteDTO> AtualizarPaciente(int id, string nome, DateTime dataNascimento)
         {
+            if (string.IsNullOrWhiteSpace(nome) || dataNascimento == default)
+                throw new BusinessException(BusinessMessages.NomeOuDataNascimentoObrigatorios);
+
+            if (dataNascimento.Date > DateTime.Today)
+                throw new BusinessException(BusinessMessages.DataInvalida);
+
             var paciente = await ObterEValidar(id);
 
             paciente.Nome = nome;

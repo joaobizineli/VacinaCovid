@@ -121,7 +121,7 @@ namespace VacinaCovid.TestesUnitario.Mock
 
             var exception = Assert.ThrowsAsync<BusinessException>(action);
 
-            Assert.IsTrue(exception.Message == BusinessMessages.NomeOuDataNascimentoObrigatorios);
+            Assert.IsTrue(exception.Message == BusinessMessages.DataInvalida);
         }
 
         [Test]
@@ -149,7 +149,8 @@ namespace VacinaCovid.TestesUnitario.Mock
 
             var exception = Assert.ThrowsAsync<BusinessException>(action);
 
-            Assert.IsTrue(exception.Message == BusinessMessages.NomeOuDataNascimentoObrigatorios);
+            Assert.IsTrue(exception.Message == BusinessMessages.DataInvalida);
+
         }
     }
 }

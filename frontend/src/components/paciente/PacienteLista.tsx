@@ -8,7 +8,7 @@ export function PacienteLista() {
   const { pacientes, filtrados, busca, setBusca, loading, removerPaciente } = usePacienteLista();
 
   return (
-    <BaseCard
+    <BaseCard className="h-full"
       title="Pacientes cadastrados"
       subtitle={`${pacientes.length} pacientes`}
     >

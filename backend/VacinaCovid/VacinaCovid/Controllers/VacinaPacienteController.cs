@@ -25,7 +25,6 @@ namespace VacinaCovid.Controllers
         public async Task<VacinaPacienteDTO> AgendarVacina([FromBody] VacinaPacienteModel model)
         {
             _logger.LogInformation($"Agendando vacina para paciente ID: {model.IdPaciente}");
-            VacinaCovidValidador.Validar(model);
             return await _vacinaPacienteNegocio.AgendarVacina(
                 model.IdPaciente,
                 model.IdVacina,

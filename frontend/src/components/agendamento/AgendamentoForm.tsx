@@ -39,12 +39,18 @@ export function AgendamentoForm() {
             <SelectTrigger className="!h-13 w-full pl-3 text-[13px] text-[#575E55] rounded-md">
               <SelectValue placeholder="Selecionar paciente..." />
             </SelectTrigger>
-            <SelectContent position="popper" side="bottom" avoidCollisions={false}>
-              {pacientes.map((p) => (
-                <SelectItem key={p.idPaciente} value={String(p.idPaciente)}>
-                  {p.nome}
-                </SelectItem>
-              ))}
+            <SelectContent
+              position="popper"
+              side="bottom"
+              avoidCollisions={false}
+            >
+              {[...pacientes]
+                .sort((a, b) => a.nome.localeCompare(b.nome))
+                .map((p) => (
+                  <SelectItem key={p.idPaciente} value={String(p.idPaciente)}>
+                    {p.nome}
+                  </SelectItem>
+                ))}
             </SelectContent>
           </Select>
         </div>
@@ -84,7 +90,11 @@ export function AgendamentoForm() {
             <SelectTrigger className="!h-13 w-full pl-3 text-[13px] text-[#575E55] rounded-md">
               <SelectValue placeholder="Selecione a vacina" />
             </SelectTrigger>
-            <SelectContent position="popper" side="bottom" avoidCollisions={false}>
+            <SelectContent
+              position="popper"
+              side="bottom"
+              avoidCollisions={false}
+            >
               <SelectItem value="1">COVID-19 - Pfizer</SelectItem>
               <SelectItem value="2">COVID-19 - AstraZeneca</SelectItem>
               <SelectItem value="3">COVID-19 - Coronavac</SelectItem>

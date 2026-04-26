@@ -19,9 +19,9 @@ export function usePacienteLista() {
     setPacientes(pacientes.filter((p) => p.idPaciente !== id));
   }
 
-  const filtrados = pacientes.filter((p) =>
-    p.nome.toLowerCase().includes(busca.toLowerCase())
-  );
+ const filtrados = pacientes
+  .filter((p) => p.nome.toLowerCase().includes(busca.toLowerCase()))
+  .sort((a, b) => a.nome.localeCompare(b.nome));
 
   return { pacientes, filtrados, busca, setBusca, loading, removerPaciente };
 }

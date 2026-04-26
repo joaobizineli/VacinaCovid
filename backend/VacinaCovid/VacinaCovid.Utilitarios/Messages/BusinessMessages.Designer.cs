@@ -79,7 +79,7 @@ namespace VacinaCovid.Utilitarios.Messages {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Não é possível cancelar agendamentos já realizados..
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Não é possível cancelar agendamentos já realizados/cancelados..
         /// </summary>
         public static string AgendamentoRealizadoCancel {
             get {
@@ -88,11 +88,20 @@ namespace VacinaCovid.Utilitarios.Messages {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Não é possível deletar agendamentos já realizados..
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Não é possível deletar agendamentos já realizados/Cancelados..
         /// </summary>
         public static string AgendamentoRealizadoDelete {
             get {
                 return ResourceManager.GetString("AgendamentoRealizadoDelete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a A data deve ser anterior ao dia de hoje.
+        /// </summary>
+        public static string DataInvalida {
+            get {
+                return ResourceManager.GetString("DataInvalida", resourceCulture);
             }
         }
         

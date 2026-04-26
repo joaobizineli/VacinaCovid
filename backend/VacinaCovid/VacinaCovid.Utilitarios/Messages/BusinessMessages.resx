@@ -166,9 +166,12 @@
     <value>Agendamento "{0}" não encontrado.</value>
   </data>
   <data name="AgendamentoRealizadoCancel" xml:space="preserve">
-    <value>Não é possível cancelar agendamentos já realizados.</value>
+    <value>Não é possível cancelar agendamentos já realizados/cancelados.</value>
   </data>
   <data name="AgendamentoRealizadoDelete" xml:space="preserve">
-    <value>Não é possível deletar agendamentos já realizados.</value>
+    <value>Não é possível deletar agendamentos já realizados/Cancelados.</value>
+  </data>
+  <data name="DataInvalida" xml:space="preserve">
+    <value>A data deve ser anterior ao dia de hoje</value>
   </data>
 </root>

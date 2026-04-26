@@ -9,16 +9,17 @@ export const pacienteService = {
   },
 
   async criar(form: CriarPacienteForm): Promise<Paciente> {
-    const params = new URLSearchParams({
+  const res = await fetch(`${API_URL}/Pacientes/InserirPaciente`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
       nome: form.nome,
       dataNascimento: `${form.dataNascimento}T00:00:00`,
-    });
-    const res = await fetch(`${API_URL}/Pacientes/InserirPaciente?${params}`, {
-      method: "POST",
-    });
-    if (!res.ok) throw new Error("Erro ao cadastrar paciente");
-    return res.json();
-  },
+    }),
+  });
+  if (!res.ok) throw new Error("Erro ao cadastrar paciente");
+  return res.json();
+},
 
   async remover(id: number): Promise<void> {
     await fetch(`${API_URL}/Pacientes/RemoverPaciente?id=${id}`, {
