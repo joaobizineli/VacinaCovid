@@ -32,12 +32,15 @@ export function Navbar() {
         >
           Pacientes
         </Link>
-        <button className="bg-transparent border-none cursor-pointer text-[15px] text-white/65 hover:text-white px-[18px] py-[8px] rounded-md flex items-center gap-2 transition-colors">
-          Agendamentos
+        <Link
+          to="/consulta"
+          className=" [&.active]:bg-[#CDE9CA] [&.active]:text-[#575E55] [&.active]:font-medium bg-transparent border-none cursor-pointer text-[15px] text-white/65 hover:text-white px-[18px] py-[8px] rounded-md flex items-center gap-2 transition-colors"
+        >
+          Consultas
           <Badge className="bg-[#E8A249] hover:bg-[#E8A249] text-white text-[12px] px-[8px] py-[2px] rounded-full pointer-events-none">
             {total}
           </Badge>
-        </button>
+        </Link>
       </div>
     </nav>
   );
