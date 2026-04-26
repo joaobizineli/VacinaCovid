@@ -4,6 +4,7 @@
   <Project Path="VacinaCovid.Negocios/VacinaCovid.Negocios.csproj" />
   <Project Path="VacinaCovid.Repositorio.Interface/VacinaCovid.Repositorio.Interface.csproj" />
   <Project Path="VacinaCovid.Repositorio/VacinaCovid.Repositorio.csproj" />
+  <Project Path="VacinaCovid.TestesUnitario/VacinaCovid.TestesUnitario.csproj" Id="653e7ca5-7615-4f7d-b79e-e55d66fb92df" />
   <Project Path="VacinaCovid.Utilitarios/VacinaCovid.Utilitarios.csproj" />
   <Project Path="VacinaCovid.Validador/VacinaCovid.Validador.csproj" Id="764649ac-4970-4b0e-a1e9-69774773688b" />
   <Project Path="VacinaCovid/VacinaCovid.csproj" />
