@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using VacinaCovid.Entidade.EntidadesDTO;
 using VacinaCovid.Negocios.Interface.INegocios;
+using VacinaCovid.Entidade.Model;
 
 namespace VacinaCovid.Controllers
 {
@@ -18,10 +19,10 @@ namespace VacinaCovid.Controllers
         }
 
         [HttpPost("InserirPaciente")]
-        public async Task<PacienteDTO> InserirPaciente(string nome, DateTime dataNascimento)
+        public async Task<PacienteDTO> InserirPaciente([FromBody] PacienteModel model)
         {
-            _logger.LogInformation($"Inserindo paciente: {nome}");
-            return await _pacienteNegocio.InserirPaciente(nome, dataNascimento);
+            _logger.LogInformation($"Inserindo paciente: {model.Nome}");
+            return await _pacienteNegocio.InserirPaciente(model.Nome, model.DataNascimento);
         }
 
         [HttpGet("ListarPacientes")]
@@ -39,10 +40,10 @@ namespace VacinaCovid.Controllers
         }
 
         [HttpPut("AlterarPaciente")]
-        public async Task<PacienteDTO> AlterarPaciente(int id, string nome, DateTime dataNascimento)
+        public async Task<PacienteDTO> AlterarPaciente(int id, [FromBody] PacienteModel model)
         {
             _logger.LogInformation($"Alterando paciente ID: {id}");
-            return await _pacienteNegocio.AtualizarPaciente(id, nome, dataNascimento);
+            return await _pacienteNegocio.AtualizarPaciente(id, model.Nome, model.DataNascimento);
         }
 
         [HttpDelete("RemoverPaciente")]

@@ -114,10 +114,11 @@ namespace VacinaCovid.Negocios.Negocios
         public async Task CancelarAgendamento(int id)
         {
             var agendamento = await _vacinaPacienteRepositorio.ObterPorId(id);
+            
             if (agendamento == null)
                 throw new BusinessException(BusinessMessages.AgendamentoNaoEncontrado);
 
-            if (agendamento.Status == StatusEnum.Realizado)
+            if (agendamento.Status != StatusEnum.Agendado)
                 throw new BusinessException(BusinessMessages.AgendamentoRealizadoCancel);
 
             agendamento.Status = StatusEnum.Cancelado;
@@ -130,7 +131,7 @@ namespace VacinaCovid.Negocios.Negocios
             if (agendamento == null)
                 throw new BusinessException(BusinessMessages.AgendamentoNaoEncontrado);
 
-            if (agendamento.Status == StatusEnum.Realizado)
+            if (agendamento.Status == StatusEnum.Realizado || agendamento.Status == StatusEnum.Cancelado)
                 throw new BusinessException(BusinessMessages.AgendamentoRealizadoDelete);
 
             await _vacinaPacienteRepositorio.DeletarPorId(id);

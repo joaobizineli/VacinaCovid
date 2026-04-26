@@ -8,5 +8,7 @@ namespace VacinaCovid.Entidade.Model
 {
     public class PacienteModel
     {
+        public string Nome { get; set; }
+        public DateTime DataNascimento { get; set; }
     }
 }
