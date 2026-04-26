@@ -32,7 +32,7 @@ export function AgendamentoForm() {
 
   return (
     <BaseCard title="Novo agendamento" className="h-full">
-      <div className="flex flex-col gap-7 h-full">
+      <div className="flex flex-col gap-6 h-full">
         <div className="flex flex-col gap-[4px]">
           <Label className="text-[13px] text-[#777]">Paciente</Label>
           <Select value={idPaciente} onValueChange={setIdPaciente}>
@@ -114,7 +114,7 @@ export function AgendamentoForm() {
         </div>
 
         <div className="mt-auto">
-          {erro && <p className="text-[12px] text-red-500 mb-2">{erro}</p>}
+          {erro && <p className="text-[12px] text-red-500">{erro}</p>}
           <Button
             className="w-full h-13 bg-[#575E55] hover:bg-[#474e45] text-white text-[14px] cursor-pointer"
             onClick={handleSubmit}

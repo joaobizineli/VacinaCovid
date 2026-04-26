@@ -36,6 +36,9 @@ export const useAgendamentoStore = create<AgendamentoStore>()(
       setAgendamentos: (agendamentos) =>
         set({ agendamentos: Array.isArray(agendamentos) ? agendamentos : [] }),
     }),
-    { name: "agendamentos" }
-  )
+    {
+      name: "agendamentos",
+      partialize: (state) => ({ agendamentos: state.agendamentos }),
+    },
+  ),
 );
