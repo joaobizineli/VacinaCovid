@@ -11,11 +11,21 @@ export function useConsultaPage() {
   const [filtroLocal, setFiltroLocal] = useState("");
   const [filtroData, setFiltroData] = useState("");
   const [filtroStatus, setFiltroStatus] = useState("");
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    agendamentoService.listar().then(setAgendamentos);
-    pacienteService.listar().then(setPacientes);
-  }, []);
+  async function carregar() {
+    try {
+      await Promise.all([
+        agendamentoService.listar().then(setAgendamentos),
+        pacienteService.listar().then(setPacientes),
+      ]);
+    } finally {
+      setLoading(false);
+    }
+  }
+  carregar();
+}, []);
 
   function getNomePaciente(id: number) {
     return pacientes.find((p) => p.idPaciente === id)?.nome ?? "-";
@@ -73,5 +83,6 @@ export function useConsultaPage() {
     setFiltroData,
     filtroStatus,
     setFiltroStatus,
+    loading,
   };
 }
