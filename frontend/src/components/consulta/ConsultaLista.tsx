@@ -4,11 +4,22 @@ import type { Agendamento } from "@/types";
 interface Props {
   agendamentos: Agendamento[];
   getNomePaciente: (id: number) => string;
+  onRealizado: (id: number) => void;
+  onCancelar: (id: number) => void;
 }
 
-export function ConsultaLista({ agendamentos, getNomePaciente }: Props) {
+export function ConsultaLista({
+  agendamentos,
+  getNomePaciente,
+  onRealizado,
+  onCancelar,
+}: Props) {
   if (agendamentos.length === 0)
-    return <p className="text-[13px] text-[#aaa] text-center mt-6">Nenhum agendamento encontrado.</p>;
+    return (
+      <p className="text-[13px] text-[#aaa] text-center mt-6">
+        Nenhum agendamento encontrado.
+      </p>
+    );
 
   return (
     <div className="flex flex-col gap-2 mt-4 overflow-y-auto max-h-[400px]">
@@ -17,8 +28,9 @@ export function ConsultaLista({ agendamentos, getNomePaciente }: Props) {
           key={a.idVacinaPaciente}
           agendamento={a}
           nomePaciente={getNomePaciente(a.idPaciente)}
-          onRealizado={() => {}}
-          onCancelar={() => {}}
+          onRealizado={() => onRealizado(a.idVacinaPaciente)}
+          onCancelar={() => onCancelar(a.idVacinaPaciente)}
+          mostrarData
         />
       ))}
     </div>

@@ -4,6 +4,7 @@ import type { Paciente, CriarPacienteForm } from "@/types";
 export const pacienteService = {
   async listar(): Promise<Paciente[]> {
     const res = await fetch(`${API_URL}/Pacientes/ListarPacientes`);
+    if (!res.ok) throw new Error("Erro ao listar pacientes");
     const json = await res.json();
     return json ?? [];
   },
@@ -17,13 +18,17 @@ export const pacienteService = {
       dataNascimento: `${form.dataNascimento}T00:00:00`,
     }),
   });
-  if (!res.ok) throw new Error("Erro ao cadastrar paciente");
+  if (!res.ok) {
+  const err = await res.json();
+  throw new Error(err.Messages?.[0] ?? "Erro ao cadastrar paciente");
+}
   return res.json();
 },
 
   async remover(id: number): Promise<void> {
-    await fetch(`${API_URL}/Pacientes/RemoverPaciente?id=${id}`, {
+    const res = await fetch(`${API_URL}/Pacientes/RemoverPaciente?id=${id}`, {
       method: "DELETE",
     });
+    if (!res.ok) throw new Error("Erro ao remover paciente");
   },
 };

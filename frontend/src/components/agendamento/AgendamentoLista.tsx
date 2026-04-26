@@ -13,7 +13,8 @@ export function AgendamentoLista() {
     marcarRealizado,
     cancelarAgendamento,
     getNomePaciente,
-    loading, // ← adiciona loading
+    loading,
+    erro,
   } = useAgendamentoLista();
 
   const manha = agendamentos
@@ -44,7 +45,7 @@ export function AgendamentoLista() {
           próximo →
         </button>
       </div>
-
+              {erro && <p className="text-[12px] text-red-500 text-center">{erro}</p>}
       <div className="flex flex-col gap-3 overflow-y-auto max-h-[430px]">
         {loading ? (
           Array.from({ length: 3 }).map((_, i) => (

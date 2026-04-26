@@ -4,7 +4,7 @@ import { ConsultaLista } from "@/components/consulta/ConsultaLista";
 import { useConsultaPage } from "@/hooks/useConsultaPage";
 
 export function ConsultaPage() {
-  const { filtrados, getNomePaciente, ...filtros } = useConsultaPage();
+const { filtrados, getNomePaciente, marcarRealizado, cancelarAgendamento, ...filtros } = useConsultaPage();
 
   return (
     <div className="p-6">
@@ -19,10 +19,12 @@ export function ConsultaPage() {
         subtitle={`${filtrados.length} resultado(s)`}
       >
         <ConsultaFiltros {...filtros} />
-        <ConsultaLista
-          agendamentos={filtrados}
-          getNomePaciente={getNomePaciente}
-        />
+            <ConsultaLista
+              agendamentos={filtrados}
+              getNomePaciente={getNomePaciente}
+              onRealizado={marcarRealizado}
+              onCancelar={cancelarAgendamento}
+            />
       </BaseCard>
     </div>
   );

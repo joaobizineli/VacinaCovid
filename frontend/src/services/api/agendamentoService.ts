@@ -4,6 +4,7 @@ import type { Agendamento, CriarAgendamentoForm } from "@/types";
 export const agendamentoService = {
   async listar(): Promise<Agendamento[]> {
     const res = await fetch(`${API_URL}/VacinaPacientes/ListarAgendamentos`);
+     if (!res.ok) throw new Error("Erro ao listar agendamentos");
     const json = await res.json();
     return json ?? [];
   },
@@ -22,20 +23,22 @@ export const agendamentoService = {
     });
     if (!res.ok) {
       const err = await res.json();
-      throw new Error(err.messages?.[0] ?? "Erro ao agendar");
+      throw new Error(err.Messages?.[0] ?? "Erro ao agendar");
     }
     return res.json();
   },
 
   async marcarRealizado(id: number): Promise<void> {
-    await fetch(`${API_URL}/VacinaPacientes/MarcarComoRealizado?id=${id}`, {
+    const res = await fetch(`${API_URL}/VacinaPacientes/MarcarComoRealizado?id=${id}`, {
       method: "PUT",
     });
+    if (!res.ok) throw new Error("Erro ao marcar como realizado");
   },
 
   async cancelar(id: number): Promise<void> {
-    await fetch(`${API_URL}/VacinaPacientes/CancelarAgendamento?id=${id}`, {
+    const res = await fetch(`${API_URL}/VacinaPacientes/CancelarAgendamento?id=${id}`, {
       method: "PUT",
     });
+    if (!res.ok) throw new Error("Erro ao cancelar agendamento");
   },
 };
