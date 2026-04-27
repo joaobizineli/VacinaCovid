@@ -41,6 +41,7 @@ namespace VacinaCovid.Negocios.Negocios
 
             var agendamentosDoDia = await _vacinaPacienteRepositorio.ListarPorData(data);
             var conflito = agendamentosDoDia.Any(a =>
+                a.HoraVacinacao != hora &&
                 Math.Abs((a.HoraVacinacao - hora).TotalHours) < 1);
 
             if (conflito)
@@ -114,7 +115,7 @@ namespace VacinaCovid.Negocios.Negocios
         public async Task CancelarAgendamento(int id)
         {
             var agendamento = await _vacinaPacienteRepositorio.ObterPorId(id);
-            
+
             if (agendamento == null)
                 throw new BusinessException(BusinessMessages.AgendamentoNaoEncontrado);
 

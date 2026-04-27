@@ -10,10 +10,8 @@ namespace VacinaCovid.Repositorio.Interface.IRepositorios
         Task<TEntidade> ObterPorId(object id);
         Task<List<TEntidade>> Listar();
         Task<TEntidade> Inserir(TEntidade entidade);
-        Task Inserir(IEnumerable<TEntidade> entidades);
         Task<TEntidade> Atualizar(TEntidade entidade);
         Task Deletar(TEntidade entidade);
-        Task Deletar(IEnumerable<TEntidade> entidades);
         Task DeletarPorId(object id);
     }
 }

@@ -16,7 +16,7 @@ namespace VacinaCovid.Validador.Fluent
                 .NotEmpty()
                 .WithMessage(BusinessMessages.NomeOuDataNascimentoObrigatorios)
                 .LessThan(DateTime.Today)
-                .WithMessage(BusinessMessages.NomeOuDataNascimentoObrigatorios);
+                .WithMessage(BusinessMessages.DataInvalida);
         }
     }
 }

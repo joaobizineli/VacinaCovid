@@ -28,7 +28,7 @@ namespace VacinaCovid.TestesUnitario.Mock
         {
             _mockRepositorio
                 .Setup(r => r.Inserir(It.IsAny<Paciente>()))
-                .Callback<Paciente>(p => p.Id = 1) // seta o Id no objeto original
+                .Callback<Paciente>(p => p.Id = 1)
                 .Returns(() => Task.FromResult(new Paciente { Id = 1, Nome = "João", DataNascimento = new DateTime(1990, 1, 1) }));
 
             _mockRepositorio

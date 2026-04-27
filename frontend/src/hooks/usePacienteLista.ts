@@ -7,6 +7,8 @@ export function usePacienteLista() {
   const setPacientes = usePacienteStore((s) => s.setPacientes);
   const [busca, setBusca] = useState("");
   const [loading, setLoading] = useState(true);
+  const [erro, setErro] = useState("");
+
 
   useEffect(() => {
     pacienteService.listar()
@@ -14,14 +16,18 @@ export function usePacienteLista() {
       .finally(() => setLoading(false));
   }, []);
 
-  async function removerPaciente(id: number) {
+async function removerPaciente(id: number) {
+  try {
     await pacienteService.remover(id);
     setPacientes(pacientes.filter((p) => p.idPaciente !== id));
+  } catch {
+    setErro("Erro ao remover paciente.");
   }
+}
 
  const filtrados = pacientes
   .filter((p) => p.nome.toLowerCase().includes(busca.toLowerCase()))
   .sort((a, b) => a.nome.localeCompare(b.nome));
 
-  return { pacientes, filtrados, busca, setBusca, loading, removerPaciente };
+  return { pacientes, filtrados, busca, setBusca, loading, removerPaciente, erro };
 }

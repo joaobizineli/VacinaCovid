@@ -22,7 +22,7 @@ namespace VacinaCovid.Repositorio.Repositorio
             public Task<List<VacinaPaciente>> ListarPorData(DateTime data)
             {
                 var query = EntitySet
-                    .Where(v => v.DataVacinacao.Date == data.Date && v.Status == StatusEnum.Agendado)
+                    .Where(v => v.DataVacinacao.Date == data.Date && (v.Status == StatusEnum.Agendado || v.Status == StatusEnum.Realizado))
                     .OrderBy(v => v.HoraVacinacao);
 
                 return query.ToListAsync();
@@ -31,7 +31,8 @@ namespace VacinaCovid.Repositorio.Repositorio
             public Task<int> ContagemPorData(DateTime data)
             {
                 var query = EntitySet
-                    .Where(v => v.DataVacinacao.Date == data.Date && v.Status == StatusEnum.Agendado);
+                    .Where(v => v.DataVacinacao.Date == data.Date);
+                        
 
                 return query.CountAsync();
             }
@@ -41,7 +42,7 @@ namespace VacinaCovid.Repositorio.Repositorio
                 var query = EntitySet
                     .Where(v => v.DataVacinacao.Date == data.Date
                              && v.HoraVacinacao == hora
-                             && v.Status == StatusEnum.Agendado);
+                             && (v.Status == StatusEnum.Agendado || v.Status == StatusEnum.Realizado));
 
                 return query.CountAsync();
             }

@@ -31,13 +31,7 @@ namespace VacinaCovid.Repositorio.Repositorio
         {
             var entityEntry = await EntitySet.AddAsync(entidade);
             await _contexto.SaveChangesAsync();
-            return entityEntry.Entity;
-        }
-
-        public async Task Inserir(IEnumerable<TEntidade> entidades)
-        {
-            await EntitySet.AddRangeAsync(entidades);
-            await _contexto.SaveChangesAsync();
+            return entityEntry.Entity; //id
         }
 
         public async Task<TEntidade> Atualizar(TEntidade entidade)
@@ -50,12 +44,6 @@ namespace VacinaCovid.Repositorio.Repositorio
         public async Task Deletar(TEntidade entidade)
         {
             EntitySet.Remove(entidade);
-            await _contexto.SaveChangesAsync();
-        }
-
-        public async Task Deletar(IEnumerable<TEntidade> entidades)
-        {
-            EntitySet.RemoveRange(entidades);
             await _contexto.SaveChangesAsync();
         }
 

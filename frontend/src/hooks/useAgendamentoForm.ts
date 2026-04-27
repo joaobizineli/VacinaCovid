@@ -31,6 +31,40 @@ export function useAgendamentoForm() {
       setErro("Preencha todos os campos.");
       return;
     }
+    
+    const agendamentosNoDia = agendamentos.filter(
+      (a) => a.dataVacinacao.slice(0, 10) === data,
+    );
+
+    if (agendamentosNoDia.length >= 20) {
+      setErro("Limite de 20 agendamentos por dia já atingido.");
+      return;
+    }
+
+    const agendamentosNoHorario = agendamentosNoDia.filter(
+      (a) =>
+        a.horaVacinacao.slice(0, 5) === hora &&
+        (a.status === "Agendado" || a.status === "Realizado"),
+    );
+
+    if (agendamentosNoHorario.length >= 2) {
+      setErro("Máximo de 2 agendamentos para este horário.");
+      return;
+    }
+
+    // ignora cancelados e mesmo horário e conflita se diferença < 60min
+    const conflito = agendamentosNoDia.some((a) => {
+      if (a.status === "Cancelado") return false;
+      if (a.horaVacinacao.slice(0, 5) === hora) return false;
+      const [h1, m1] = hora.split(":").map(Number);
+      const [h2, m2] = a.horaVacinacao.slice(0, 5).split(":").map(Number);
+      return Math.abs(h1 * 60 + m1 - (h2 * 60 + m2)) < 60;
+    });
+
+    if (conflito) {
+      setErro("Deve haver intervalo de 1 hora entre agendamentos.");
+      return;
+    }
 
     setLoading(true);
     try {
@@ -42,8 +76,12 @@ export function useAgendamentoForm() {
         localVacinacao: local,
       });
       setAgendamentos([...agendamentos, novo]);
-      setIdPaciente(""); setData(""); setHora("");
-      setIdVacina(""); setLocal(""); setErro("");
+      setIdPaciente("");
+      setData("");
+      setHora("");
+      setIdVacina("");
+      setLocal("");
+      setErro("");
       abrir("Agendamento realizado!", "Paciente agendado com sucesso.");
     } catch (e) {
       setErro(e instanceof Error ? e.message : "Erro ao agendar.");
@@ -53,12 +91,19 @@ export function useAgendamentoForm() {
   }
 
   return {
-    idPaciente, setIdPaciente,
-    data, setData,
-    hora, setHora,
-    idVacina, setIdVacina,
-    local, setLocal,
-    erro, loading, pacientes,
+    idPaciente,
+    setIdPaciente,
+    data,
+    setData,
+    hora,
+    setHora,
+    idVacina,
+    setIdVacina,
+    local,
+    setLocal,
+    erro,
+    loading,
+    pacientes,
     handleSubmit,
   };
 }

@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using System.Diagnostics;
 using System.Net;
 using System.Text.Json.Serialization;
+using VacinaCovid.Repositorio.Interface;
 using VacinaCovid.Utilitarios.Excepetions;
 using VacinaCovid.Utilitarios.Exceptions;
 using VacinaCovid.Utilitarios.Messages;
@@ -13,9 +14,11 @@ namespace VacinaCovid.Middleware
     public class ApiMiddleware : IMiddleware
     {
         private readonly ILog _log = LogManager.GetLogger(typeof(ApiMiddleware));
+        private readonly IGerenciadorTransacao _gerenciadorTransacao;
 
-        public ApiMiddleware()
+        public ApiMiddleware(IGerenciadorTransacao gerenciadorTransacao)
         {
+            _gerenciadorTransacao = gerenciadorTransacao;
         }
 
 
@@ -25,7 +28,12 @@ namespace VacinaCovid.Middleware
             stopwatch.Start();
             try
             {
+                await _gerenciadorTransacao.BeginTransactionAsync(System.Data.IsolationLevel.ReadCommitted);
+                
                 await next.Invoke(context);
+                
+                await _gerenciadorTransacao.CommitTransactionsAsync();
+
                 stopwatch.Stop();
                 _log.InfoFormat("Serviço exevutado com sucesso: {0} {1} {2}ms", context.Request.Method,
                     context.Request.Path,
@@ -33,6 +41,8 @@ namespace VacinaCovid.Middleware
             }
             catch (Exception ex)
             {
+                await _gerenciadorTransacao.RollbackTransactionsAsync();
+
                 stopwatch.Stop();
                 _log.Error($"Erro no serviço {context.Request.Path} / Mensagens: {ex.Message} [{stopwatch.ElapsedMilliseconds}]");
                 await HandleException(context, ex);
@@ -50,18 +60,21 @@ namespace VacinaCovid.Middleware
             switch (ex)
             {
                 case BusinessException:
+                    response.StatusCode = (int)HttpStatusCode.BadRequest;
                     messages.Add(ex.Message);
                     break;
 
                 case BusinessListException: 
+                    response.StatusCode = (int)HttpStatusCode.BadRequest;
                     messages = ((BusinessListException)ex).Messages;
                     break;
                 default:
+                    response.StatusCode = (int)HttpStatusCode.InternalServerError;
                     messages.Add(InfraMessages.ErroInesperado);
                     break;
             }
 
-            await response.WriteAsJsonAsync(JsonConvert.SerializeObject(new DefaultResponse(HttpStatusCode.InternalServerError, messages)));
+        await response.WriteAsync(JsonConvert.SerializeObject(new DefaultResponse((HttpStatusCode)response.StatusCode, messages)));        
         }
     }
 }

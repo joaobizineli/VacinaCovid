@@ -1,4 +1,4 @@
-import { formatarHora } from "@/lib/utils/date";
+import { formatarHora, formatarDataExibicao } from "@/lib/utils/date";
 import type { Agendamento } from "@/types";
 
 const statusCls: Record<string, string> = {
@@ -12,9 +12,10 @@ interface AgendamentoItemProps {
   nomePaciente: string;
   onRealizado: () => void;
   onCancelar: () => void;
+  mostrarData?: boolean;
 }
 
-export function AgendamentoItem({ agendamento, nomePaciente, onRealizado, onCancelar }: AgendamentoItemProps) {
+export function AgendamentoItem({ agendamento, nomePaciente, onRealizado, onCancelar, mostrarData }: AgendamentoItemProps) {
   return (
     <div className="flex items-center gap-[10px] px-3 py-[9px] rounded-[8px] border-[0.5px] border-[#e5e8e3]">
       <span className="bg-[#CDE9CA] text-[#575E55] text-[12px] font-semibold px-[10px] py-1 rounded-[6px] min-w-[52px] text-center">
@@ -22,7 +23,7 @@ export function AgendamentoItem({ agendamento, nomePaciente, onRealizado, onCanc
       </span>
       <div className="flex-1">
         <div className="text-[13px] font-medium text-[#575E55]">{nomePaciente}</div>
-        <div className="text-[11px] text-[#aaa] mt-[1px]">{agendamento.localVacinacao}</div>
+        <div className="text-[11px] text-[#aaa] mt-[1px]">{agendamento.localVacinacao}{mostrarData && ` · ${formatarDataExibicao(agendamento.dataVacinacao)}`}</div>
       </div>
       <span className={`text-[11px] px-[9px] py-[3px] rounded-full ${statusCls[agendamento.status]}`}>
         {agendamento.status}

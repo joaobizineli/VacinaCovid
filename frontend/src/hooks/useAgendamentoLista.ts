@@ -19,8 +19,10 @@ export function useAgendamentoLista() {
     useShallow((s) => ({ diaAnterior: s.diaAnterior, proximoDia: s.proximoDia }))
   );
   const pacientes = usePacienteStore((s) => s.pacientes);
-  const setPacientes = usePacienteStore((s) => s.setPacientes);  // ← adiciona essa
+  const setPacientes = usePacienteStore((s) => s.setPacientes);
   const [loading, setLoading] = useState(true);
+  const [erro, setErro] = useState("");
+
 
    useEffect(() => {
     agendamentoService.listar()
@@ -34,24 +36,31 @@ export function useAgendamentoLista() {
 
   
 
-  async function marcarRealizado(id: number) {
+async function marcarRealizado(id: number) {
+  try {
     await agendamentoService.marcarRealizado(id);
     const lista = await agendamentoService.listar();
     setAgendamentos(lista);
+  } catch{
+    setErro("Erro ao marcar como realizado.");
   }
-
-  async function cancelarAgendamento(id: number) {
+}
+async function cancelarAgendamento(id: number) {
+  try {
     await agendamentoService.cancelar(id);
     const lista = await agendamentoService.listar();
     setAgendamentos(lista);
+  } catch{
+    setErro("Erro ao cancelar agendamento.");
   }
+}
 
   function getNomePaciente(id: number): string {
-    return (pacientes ?? []).find((p) => p.idPaciente === id)?.nome ?? `Paciente #${id}`;
+    return (pacientes ?? []).find((p) => p.idPaciente === id)?.nome ?? `-`;
   }
 
   return {
     diaAtual, agendamentos, diaAnterior, proximoDia,
-    marcarRealizado, cancelarAgendamento, getNomePaciente, loading,
+    marcarRealizado, cancelarAgendamento, getNomePaciente, loading, erro,
   };
 }

@@ -19,7 +19,7 @@ namespace VacinaCovid.TestesUnitario.BancoEmMemoria
         }
 
         [Test]
-        public async Task ContagemPorData_DeveContarSomenteAgendados()
+        public async Task ContagemPorData_DeveContarTodosOsStatus()
         {
             var data = DateTime.Today.AddDays(1);
 
@@ -32,7 +32,7 @@ namespace VacinaCovid.TestesUnitario.BancoEmMemoria
 
             var contagem = await _repositorio.ContagemPorData(data);
 
-            Assert.That(contagem, Is.EqualTo(1));
+            Assert.That(contagem, Is.EqualTo(3));
         }
 
         [Test]

@@ -1,5 +1,7 @@
 ﻿using VacinaCovid.Negocios.Interface.INegocios;
 using VacinaCovid.Negocios.Negocios;
+using VacinaCovid.Repositorio;
+using VacinaCovid.Repositorio.Interface;
 using VacinaCovid.Repositorio.Interface.IRepositorios;
 using VacinaCovid.Repositorio.Repositorio;
 
@@ -12,6 +14,8 @@ namespace VacinaCovid.Configuration
         {
             InjectRepository(services);
             InjectBusiness(services);
+
+            services.AddScoped<IGerenciadorTransacao, ControleTransacao.GerenciadorTransacao>();
         }
 
         private static void InjectBusiness(IServiceCollection services)

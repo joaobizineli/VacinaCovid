@@ -26,6 +26,7 @@ export function AgendamentoForm() {
     local,
     setLocal,
     erro,
+    loading,
     pacientes,
     handleSubmit,
   } = useAgendamentoForm();
@@ -118,8 +119,9 @@ export function AgendamentoForm() {
           <Button
             className="w-full h-13 bg-[#575E55] hover:bg-[#474e45] text-white text-[14px] cursor-pointer"
             onClick={handleSubmit}
+            disabled={loading}
           >
-            Agendar
+            {loading ? "Agendando..." : "Agendar"}
           </Button>
         </div>
       </div>

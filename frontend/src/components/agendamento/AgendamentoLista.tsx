@@ -13,16 +13,17 @@ export function AgendamentoLista() {
     marcarRealizado,
     cancelarAgendamento,
     getNomePaciente,
-    loading, // ← adiciona loading
+    loading,
+    erro,
   } = useAgendamentoLista();
 
-  const manha = agendamentos
-    .filter((a) => parseInt(a.horaVacinacao) < 12)
-    .sort((a, b) => a.horaVacinacao.localeCompare(b.horaVacinacao));
+const manha = agendamentos
+  .filter((a) => Number(a.horaVacinacao.slice(0, 2)) < 12)
+  .sort((a, b) => a.horaVacinacao.localeCompare(b.horaVacinacao));
 
-  const tarde = agendamentos
-    .filter((a) => parseInt(a.horaVacinacao) >= 12)
-    .sort((a, b) => a.horaVacinacao.localeCompare(b.horaVacinacao));
+const tarde = agendamentos
+  .filter((a) => Number(a.horaVacinacao.slice(0, 2)) >= 12)
+  .sort((a, b) => a.horaVacinacao.localeCompare(b.horaVacinacao));
 
   return (
     <BaseCard
@@ -44,8 +45,8 @@ export function AgendamentoLista() {
           próximo →
         </button>
       </div>
-
-      <div className="flex flex-col gap-3 overflow-y-auto max-h-[430px]">
+              {erro && <p className="text-[12px] text-red-500 text-center">{erro}</p>}
+      <div className="flex flex-col gap-3 overflow-y-auto max-h-[400px]">
         {loading ? (
           Array.from({ length: 3 }).map((_, i) => (
             <div
