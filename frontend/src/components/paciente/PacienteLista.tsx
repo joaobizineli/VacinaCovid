@@ -5,7 +5,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { usePacienteLista } from "@/hooks/usePacienteLista";
 
 export function PacienteLista() {
-  const { pacientes, filtrados, busca, setBusca, loading, removerPaciente } = usePacienteLista();
+  const { pacientes, filtrados, busca, setBusca, loading, removerPaciente, erro } = usePacienteLista();
 
   return (
     <BaseCard className="h-full"
@@ -19,6 +19,7 @@ export function PacienteLista() {
           value={busca}
           onChange={(e) => setBusca(e.target.value)}
         />
+        {erro && <p className="text-[12px] text-red-500">{erro}</p>}
         <div className="flex flex-col gap-2 overflow-y-auto max-h-[calc(100vh-280px)]">
           {loading ? (
             Array.from({ length: 4 }).map((_, i) => (

@@ -52,6 +52,7 @@ export function useAgendamentoForm() {
       return;
     }
 
+    // ignora cancelados e mesmo horário e conflita se diferença < 60min
     const conflito = agendamentosNoDia.some((a) => {
       if (a.status === "Cancelado") return false;
       if (a.horaVacinacao.slice(0, 5) === hora) return false;
