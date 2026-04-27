@@ -78,7 +78,6 @@ namespace VacinaCovid
             
             app.UseRouting();
 
-            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseMiddleware<ApiMiddleware>();

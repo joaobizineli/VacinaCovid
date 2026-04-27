@@ -29,11 +29,6 @@ namespace VacinaCovid.Repositorio.Map
             builder.Property(p => p.DataNascimento)
                 .HasColumnName("dat_nascimento")
                 .IsRequired();
-
-            builder.Property(p => p.DataCriacao)
-                .HasColumnName("dat_criacao")
-                .HasColumnType("datetime")
-                .IsRequired();
         }
     }
 }

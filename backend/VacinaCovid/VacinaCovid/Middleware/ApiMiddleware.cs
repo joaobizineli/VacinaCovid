@@ -74,7 +74,7 @@ namespace VacinaCovid.Middleware
                     break;
             }
 
-            await response.WriteAsync(JsonConvert.SerializeObject(new DefaultResponse(HttpStatusCode.InternalServerError, messages)));
+        await response.WriteAsync(JsonConvert.SerializeObject(new DefaultResponse((HttpStatusCode)response.StatusCode, messages)));        
         }
     }
 }

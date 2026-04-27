@@ -350,3 +350,88 @@
 2026-04-26 16:57:21,383|[INFO ]|[28]|Serviço exevutado com sucesso: POST /api/VacinaPacientes/AgendarVacina 10781ms
 2026-04-26 17:02:23,046|[INFO ]|[1]|Iniciando a API
 2026-04-26 17:02:58,522|[INFO ]|[13]|Serviço exevutado com sucesso: POST /api/VacinaPacientes/AgendarVacina 20387ms
+2026-04-26 19:51:39,454|[INFO ]|[1]|Iniciando a API
+2026-04-26 20:00:44,728|[INFO ]|[17]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 28ms
+2026-04-26 20:00:44,728|[INFO ]|[22]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 108ms
+2026-04-26 20:00:44,728|[INFO ]|[16]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 1163ms
+2026-04-26 20:00:44,728|[INFO ]|[15]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 323ms
+2026-04-26 20:02:06,800|[INFO ]|[24]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 16ms
+2026-04-26 20:02:06,818|[INFO ]|[25]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 15ms
+2026-04-26 20:02:38,753|[INFO ]|[23]|Serviço exevutado com sucesso: PUT /api/VacinaPacientes/CancelarAgendamento 278ms
+2026-04-26 20:02:38,767|[INFO ]|[24]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 8ms
+2026-04-26 20:02:40,400|[INFO ]|[24]|Serviço exevutado com sucesso: PUT /api/VacinaPacientes/CancelarAgendamento 17ms
+2026-04-26 20:02:40,410|[INFO ]|[24]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 6ms
+2026-04-26 20:02:41,550|[INFO ]|[25]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 25ms
+2026-04-26 20:02:41,561|[INFO ]|[24]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 11ms
+2026-04-26 20:02:41,852|[INFO ]|[22]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 11ms
+2026-04-26 20:02:41,855|[INFO ]|[24]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 14ms
+2026-04-26 20:02:41,871|[INFO ]|[26]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 15ms
+2026-04-26 20:02:41,872|[INFO ]|[28]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 12ms
+2026-04-26 20:02:48,902|[INFO ]|[22]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 8ms
+2026-04-26 20:02:48,911|[INFO ]|[22]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 7ms
+2026-04-26 20:03:02,653|[INFO ]|[28]|Serviço exevutado com sucesso: POST /api/Pacientes/InserirPaciente 78ms
+2026-04-26 20:03:05,694|[INFO ]|[28]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 7ms
+2026-04-26 20:03:05,702|[INFO ]|[28]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 6ms
+2026-04-26 20:03:22,803|[INFO ]|[28]|Serviço exevutado com sucesso: POST /api/VacinaPacientes/AgendarVacina 121ms
+2026-04-26 20:03:25,747|[INFO ]|[25]|Serviço exevutado com sucesso: PUT /api/VacinaPacientes/MarcarComoRealizado 16ms
+2026-04-26 20:03:25,757|[INFO ]|[28]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 6ms
+2026-04-26 20:03:26,954|[INFO ]|[25]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 6ms
+2026-04-26 20:03:26,961|[INFO ]|[26]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 5ms
+2026-04-26 20:03:27,277|[INFO ]|[27]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 9ms
+2026-04-26 20:03:27,278|[INFO ]|[22]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 10ms
+2026-04-26 20:03:27,293|[INFO ]|[26]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 14ms
+2026-04-26 20:03:27,295|[INFO ]|[26]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 15ms
+2026-04-26 20:03:29,315|[INFO ]|[28]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 7ms
+2026-04-26 20:03:29,322|[INFO ]|[28]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 5ms
+2026-04-26 20:18:32,440|[INFO ]|[1]|Iniciando a API
+2026-04-26 21:01:13,777|[INFO ]|[1]|Iniciando a API
+2026-04-26 21:01:16,461|[INFO ]|[14]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 1194ms
+2026-04-26 21:01:16,461|[INFO ]|[17]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 1194ms
+2026-04-26 21:01:16,515|[INFO ]|[13]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 68ms
+2026-04-26 21:01:16,519|[INFO ]|[18]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 72ms
+2026-04-26 21:02:21,212|[INFO ]|[16]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 16ms
+2026-04-26 21:02:21,223|[INFO ]|[17]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 8ms
+2026-04-26 21:03:40,266|[INFO ]|[21]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 47ms
+2026-04-26 21:03:40,281|[INFO ]|[22]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 14ms
+2026-04-26 21:04:18,754|[INFO ]|[23]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 11ms
+2026-04-26 21:04:18,768|[INFO ]|[25]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 9ms
+2026-04-26 21:05:15,691|[INFO ]|[26]|Serviço exevutado com sucesso: POST /api/VacinaPacientes/AgendarVacina 324ms
+2026-04-26 21:06:06,661|[INFO ]|[27]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 12ms
+2026-04-26 21:06:06,671|[INFO ]|[27]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 23ms
+2026-04-26 21:06:06,678|[INFO ]|[27]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 9ms
+2026-04-26 21:06:06,686|[INFO ]|[23]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 8ms
+2026-04-26 21:06:27,816|[INFO ]|[25]|Serviço exevutado com sucesso: PUT /api/VacinaPacientes/MarcarComoRealizado 27ms
+2026-04-26 21:06:27,826|[INFO ]|[25]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 6ms
+2026-04-26 21:06:30,844|[INFO ]|[26]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 7ms
+2026-04-26 21:06:30,853|[INFO ]|[27]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 6ms
+2026-04-26 21:06:33,844|[INFO ]|[29]|Serviço exevutado com sucesso: PUT /api/VacinaPacientes/CancelarAgendamento 15ms
+2026-04-26 21:06:33,852|[INFO ]|[29]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 5ms
+2026-04-26 21:06:34,776|[INFO ]|[28]|Serviço exevutado com sucesso: PUT /api/VacinaPacientes/CancelarAgendamento 17ms
+2026-04-26 21:06:34,785|[INFO ]|[27]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 6ms
+2026-04-26 21:06:35,189|[INFO ]|[27]|Serviço exevutado com sucesso: PUT /api/VacinaPacientes/MarcarComoRealizado 9ms
+2026-04-26 21:06:35,197|[INFO ]|[28]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 6ms
+2026-04-26 21:06:35,661|[INFO ]|[28]|Serviço exevutado com sucesso: PUT /api/VacinaPacientes/MarcarComoRealizado 14ms
+2026-04-26 21:06:35,670|[INFO ]|[29]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 6ms
+2026-04-26 21:06:46,466|[INFO ]|[29]|Serviço exevutado com sucesso: PUT /api/VacinaPacientes/MarcarComoRealizado 17ms
+2026-04-26 21:06:46,475|[INFO ]|[25]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 5ms
+2026-04-26 21:06:46,823|[INFO ]|[28]|Serviço exevutado com sucesso: PUT /api/VacinaPacientes/MarcarComoRealizado 10ms
+2026-04-26 21:06:46,832|[INFO ]|[29]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 6ms
+2026-04-26 21:14:59,583|[INFO ]|[29]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 91ms
+2026-04-26 21:14:59,616|[INFO ]|[29]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 12ms
+2026-04-26 21:15:08,146|[INFO ]|[28]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 8ms
+2026-04-26 21:15:08,154|[INFO ]|[28]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 6ms
+2026-04-26 21:15:11,830|[ERROR]|[28]|Erro no serviço /api/Pacientes/RemoverPaciente / Mensagens: An error occurred while saving the entity changes. See the inner exception for details. [194]
+2026-04-26 21:15:16,171|[ERROR]|[28]|Erro no serviço /api/Pacientes/RemoverPaciente / Mensagens: An error occurred while saving the entity changes. See the inner exception for details. [110]
+2026-04-26 21:15:20,561|[ERROR]|[30]|Erro no serviço /api/Pacientes/RemoverPaciente / Mensagens: An error occurred while saving the entity changes. See the inner exception for details. [113]
+2026-04-26 21:15:29,226|[ERROR]|[19]|Erro no serviço /api/Pacientes/RemoverPaciente / Mensagens: An error occurred while saving the entity changes. See the inner exception for details. [115]
+2026-04-26 21:15:49,764|[INFO ]|[19]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 14ms
+2026-04-26 21:15:49,765|[INFO ]|[29]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 15ms
+2026-04-26 21:15:49,810|[INFO ]|[19]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 40ms
+2026-04-26 21:15:49,812|[INFO ]|[33]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 43ms
+2026-04-26 21:15:51,867|[INFO ]|[33]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 6ms
+2026-04-26 21:15:51,877|[INFO ]|[33]|Serviço exevutado com sucesso: GET /api/VacinaPacientes/ListarAgendamentos 6ms
+2026-04-26 21:16:24,457|[INFO ]|[33]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 10ms
+2026-04-26 21:16:24,468|[INFO ]|[33]|Serviço exevutado com sucesso: GET /api/Pacientes/ListarPacientes 9ms
+2026-04-26 21:16:28,514|[INFO ]|[34]|Serviço exevutado com sucesso: POST /api/Pacientes/InserirPaciente 17ms
+2026-04-26 21:16:30,477|[INFO ]|[33]|Serviço exevutado com sucesso: DELETE /api/Pacientes/RemoverPaciente 18ms
+2026-04-26 21:16:32,750|[ERROR]|[35]|Erro no serviço /api/Pacientes/RemoverPaciente / Mensagens: An error occurred while saving the entity changes. See the inner exception for details. [92]
