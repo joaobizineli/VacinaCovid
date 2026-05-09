@@ -32,8 +32,8 @@ namespace VacinaCovid
                 {
                     Title = "Vacina Covid",
                     Version = "v1",
-                    Description = "API Pitang Estágio 2026",
-                    Contact = new() { Name = "João Pedro Scarpat Bizineli", Url = new Uri("http://google.com.br") },
+                    Description = "API 2026",
+                    Contact = new() { Name = "", Url = new Uri("http://google.com.br") },
                     License = new() { Name = "Private", Url = new Uri("http://google.com.br") },
                     TermsOfService = new Uri("http://google.com.br")
                 });
